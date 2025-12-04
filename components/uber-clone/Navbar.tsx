@@ -34,11 +34,11 @@ export default function Navbar() {
 
                 {/* CTA Buttons */}
                 <div className="hidden md:flex items-center gap-4">
-                    <SiteLink href="#" className="text-sm font-medium text-white hover:text-gray-300 transition-colors">
+                    <SiteLink href="/login" className="text-sm font-medium text-white hover:text-gray-300 transition-colors">
                         Log in
                     </SiteLink>
                     <SiteLink
-                        href="#"
+                        href="/signup"
                         className="px-4 py-2 bg-white text-black text-sm font-bold rounded-full hover:bg-gray-200 transition-colors"
                     >
                         Sign up
@@ -70,11 +70,11 @@ export default function Navbar() {
                         About
                     </SiteLink>
                     <div className="h-px bg-white/10 my-2" />
-                    <SiteLink href="#" className="text-lg font-medium text-gray-300 hover:text-white">
+                    <SiteLink href="/login" className="text-lg font-medium text-gray-300 hover:text-white">
                         Log in
                     </SiteLink>
                     <SiteLink
-                        href="#"
+                        href="/signup"
                         className="px-4 py-3 bg-white text-black text-center font-bold rounded-full hover:bg-gray-200"
                     >
                         Sign up

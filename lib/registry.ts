@@ -22,6 +22,8 @@ export const siteRegistry: Record<string, SiteComponentRegistry> = {
     },
     "uber-clone": {
         home: dynamic(() => import("@/components/uber-clone/LandingPage")),
+        signup: dynamic(() => import("@/components/uber-clone/Signup")),
+        login: dynamic(() => import("@/components/uber-clone/Login")),
     },
 };
 
