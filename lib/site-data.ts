@@ -30,6 +30,16 @@ export const sites: SiteData[] = [
         image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop",
         featured: true
     },
+    {
+        id: "uber-clone",
+        name: "Uber Next",
+        description: "A premium, high-fidelity clone of the Uber landing page.",
+        subdomain: "uber-clone",
+        tags: ["SaaS", "Transport", "Premium", "Clone"],
+        color: "from-gray-900 to-black",
+        image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop",
+        featured: true
+    },
 ];
 
 export const allTags = Array.from(new Set(sites.flatMap(site => site.tags)));

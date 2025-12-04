@@ -20,6 +20,9 @@ export const siteRegistry: Record<string, SiteComponentRegistry> = {
     "devflow": {
         home: dynamic(() => import("@/components/devflow/LandingPage")),
     },
+    "uber-clone": {
+        home: dynamic(() => import("@/components/uber-clone/LandingPage")),
+    },
 };
 
 // Helper function to get a component for a specific site and page
