@@ -49,10 +49,13 @@ We use `shadcn/ui` as a base, but **do not use it out of the box**.
 - **Premium Feel**: Use custom colors, rounded corners, and typography to make the site feel unique and high-end.
 - **Components**: Use Shadcn for functionality (Accordions, Dialogs, etc.) but style them heavily.
 
-### 2. Icons
-Use premium icon libraries. Do not use generic emojis if possible.
-- **Recommended**: `lucide-react` (Primary), `react-icons`, `social-react-icons`.
-- **Usage**: Import specific icons to keep bundle size low.
+### 2. Icons & Images
+Use premium icon libraries and high-quality images.
+-   **Icons**: `lucide-react` (Primary), `react-icons`, `social-react-icons`.
+-   **Images**: Use **Unsplash** or other high-quality free image providers. **DO NOT** leave image sources empty or use generic placeholders.
+    -   Example: `https://images.unsplash.com/photo-123456789...`
+-   **Design**: **DO NOT COPY** designs from other landing pages. Create unique, original designs.
+-   **Usage**: Import specific icons to keep bundle size low.
 
 ### 3. Links & Routing (CRITICAL)
 When building a site that runs on a subdomain, **always use the `SiteLink` component**.

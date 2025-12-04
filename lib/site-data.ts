@@ -20,6 +20,16 @@ export const sites: SiteData[] = [
         image: "/images/puppy-tech.png",
         featured: true
     },
+    {
+        id: "devflow",
+        name: "DevFlow",
+        description: "A sleek, high-performance portfolio template for modern developers.",
+        subdomain: "devflow",
+        tags: ["Portfolio", "Personal", "Dark Mode", "Minimal"],
+        color: "from-emerald-500 to-cyan-600",
+        image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop",
+        featured: true
+    },
 ];
 
 export const allTags = Array.from(new Set(sites.flatMap(site => site.tags)));

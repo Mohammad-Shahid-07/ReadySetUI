@@ -17,6 +17,9 @@ export const siteRegistry: Record<string, SiteComponentRegistry> = {
         menu: dynamic(() => import("@/components/puppy-tech/Menu")),
         signup: dynamic(() => import("@/components/puppy-tech/Signup")),
     },
+    "devflow": {
+        home: dynamic(() => import("@/components/devflow/LandingPage")),
+    },
 };
 
 // Helper function to get a component for a specific site and page
