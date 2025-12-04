@@ -1,32 +1,28 @@
-import React from 'react';
+import { ComponentType } from "react";
+import dynamic from "next/dynamic";
 
-// Define the type for a site's component registry
-// It maps a route (e.g., 'home', 'about', 'pricing') to a dynamic import function
+// Define the type for the site registry
+// Each site can have multiple pages (home, about, etc.)
+// The 'home' key is required, others are optional
 export type SiteComponentRegistry = {
-    [key: string]: () => Promise<{ default: React.ComponentType<any> }>;
+    home: ComponentType<any>;
+    [key: string]: ComponentType<any>;
 };
 
-// The main registry object mapping site IDs to their component registry
+// Centralized registry of all sites
+// This maps a "site ID" (subdomain) to its components
 export const siteRegistry: Record<string, SiteComponentRegistry> = {
     "puppy-tech": {
-        home: () => import("@/components/puppy-tech/LandingPage"),
-        menu: () => import("@/components/puppy-tech/Menu"),
-        signup: () => import("@/components/puppy-tech/Signup"),
+        home: dynamic(() => import("@/components/puppy-tech/LandingPage")),
+        menu: dynamic(() => import("@/components/puppy-tech/Menu")),
+        signup: dynamic(() => import("@/components/puppy-tech/Signup")),
     },
 };
 
-export async function getSiteComponent(site: string, page: string) {
+// Helper function to get a component for a specific site and page
+export function getSiteComponent(site: string, page: string = "home"): ComponentType<any> | null {
     const siteConfig = siteRegistry[site];
     if (!siteConfig) return null;
 
-    const loader = siteConfig[page];
-    if (!loader) return null;
-
-    try {
-        const module = await loader();
-        return module.default;
-    } catch (error) {
-        console.error(`Failed to load component for site: ${site}, page: ${page}`, error);
-        return null;
-    }
+    return siteConfig[page] || null;
 }

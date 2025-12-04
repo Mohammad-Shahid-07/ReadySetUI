@@ -85,14 +85,33 @@ We have pre-installed premium libraries for you to use:
     - Build your components (Hero, Features, Footer, etc.).
 
 2.  **Register Site**:
-    - Add the site metadata to `lib/registry.ts`.
-    - Add the site to the list in `app/page.tsx`.
+    - Add the site metadata to `lib/registry.ts` (for component loading).
+    - Add the site details (tags, description) to `lib/site-data.ts` (for the homepage).
 
 3.  **Handle Routing**:
     - The registry handles the routing automatically!
 
-## URL Structure Examples
+## Deployment (Vercel)
 
-- `readysetui.vercel.app` -> Shows Marketplace Home
-- `cool-startup.readysetui.vercel.app` -> Shows "Cool Startup" Landing Page Home
-- `cool-startup.readysetui.vercel.app/pricing` -> Shows "Cool Startup" Pricing Page
+To make subdomains work in production (e.g., `puppy-tech.yourdomain.com`), you need to configure a **Wildcard Domain**.
+
+1.  Go to your Vercel Project Settings > **Domains**.
+2.  Add your domain: `yourdomain.com`.
+3.  Add a wildcard domain: `*.yourdomain.com`.
+    - Vercel will ask you to add a `CNAME` record (usually `cname.vercel-dns.com`) or `A` record in your DNS provider (GoDaddy, Namecheap, etc.).
+4.  Once verified, any request to `anything.yourdomain.com` will hit your Next.js app, and the `proxy.ts` will handle the routing!
+
+## Local Development (Subdomains)
+
+To test subdomains locally (e.g., `puppy-tech.localhost:3000`), you must update your OS `hosts` file.
+
+**Windows**: `C:\Windows\System32\drivers\etc\hosts`
+**Mac/Linux**: `/etc/hosts`
+
+Add the following lines:
+```
+127.0.0.1   puppy-tech.localhost
+127.0.0.1   site-a.localhost
+127.0.0.1   site-b.localhost
+```
+Without this, `http://puppy-tech.localhost:3000` will fail to resolve.
