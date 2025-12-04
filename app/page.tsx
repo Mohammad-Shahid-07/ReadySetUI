@@ -39,10 +39,9 @@ export default function Home() {
     if (isLocalhost) {
       return `${protocol}//${subdomain}.localhost:3000`;
     } else {
-      // Production: assumes wildcard domain is set up
-      // e.g. https://puppy-tech.readysetui.vercel.app
-      const rootDomain = window.location.host; // readysetui.vercel.app
-      return `${protocol}//${subdomain}.${rootDomain}`;
+      // Production: Always link to the tenant domain (readysetui.top)
+      // regardless of which domain we are currently on (ui.eliteweb.top)
+      return `${protocol}//${subdomain}.readysetui.top`;
     }
   };
 

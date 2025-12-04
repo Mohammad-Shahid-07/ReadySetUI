@@ -18,25 +18,29 @@ export default async function proxy(req: NextRequest) {
     const url = req.nextUrl;
     const hostname = req.headers.get("host");
 
-    // Define the base domain for production and development
-    // You might want to move these to environment variables
-    const productionDomain = "readysetui.vercel.app";
-    const devDomain = "localhost:3000";
-
     let currentHost;
 
     if (process.env.NODE_ENV === "production") {
-        if (hostname === productionDomain) {
-            currentHost = null; // Main domain
-        } else if (hostname?.endsWith(`.${productionDomain}`)) {
-            currentHost = hostname.replace(`.${productionDomain}`, ""); // Subdomain
+        // Production Domain Logic
+        if (hostname === "ui.eliteweb.top") {
+            // Main Marketplace Domain -> No rewrite needed
+            currentHost = null;
+        } else if (hostname?.endsWith(".readysetui.top")) {
+            // Tenant Domain -> Rewrite to /site/[subdomain]
+            // e.g. puppy-tech.readysetui.top -> puppy-tech
+            currentHost = hostname.replace(".readysetui.top", "");
+        } else if (hostname === "readysetui.top") {
+            // Root of tenant domain (optional, treat as main site or redirect)
+            currentHost = null;
         } else {
-            currentHost = null; // Fallback
+            // Fallback for other domains (e.g. vercel.app)
+            // You might want to handle this differently
+            currentHost = null;
         }
     } else {
         // Development handling
         // To test subdomains locally, you'd need to edit /etc/hosts to map site.localhost to 127.0.0.1
-        if (hostname === devDomain) {
+        if (hostname === "localhost:3000") {
             currentHost = null;
         } else if (hostname?.endsWith(".localhost:3000")) {
             currentHost = hostname.replace(".localhost:3000", "");
