@@ -55,15 +55,18 @@ Use premium icon libraries. Do not use generic emojis if possible.
 - **Usage**: Import specific icons to keep bundle size low.
 
 ### 3. Links & Routing (CRITICAL)
-When building a site that runs on a subdomain, **always use root-relative paths**.
-- **CORRECT**: `<Link href="/signup">`
-- **INCORRECT**: `<Link href="/site/puppy-tech/signup">`
+When building a site that runs on a subdomain, **always use the `SiteLink` component**.
+
+- **Import**: `import { SiteLink } from '@/components/site-link';`
+- **Usage**: `<SiteLink href="/signup">Get Started</SiteLink>`
 
 **Why?**
-When a user visits `puppy-tech.readysetui.vercel.app`, they are already "inside" the site.
-- A link to `/signup` resolves to `puppy-tech.readysetui.vercel.app/signup`.
-- The proxy then rewrites this internally to `/site/puppy-tech/signup`.
-- If you hardcode `/site/puppy-tech/signup`, the user ends up at `puppy-tech.readysetui.vercel.app/site/puppy-tech/signup`, which is wrong.
+We support both path-based routing (for the main marketplace preview) and subdomain routing (for the live site).
+- **Path-based**: `ui.eliteweb.top/site/puppy-tech/signup`
+- **Subdomain**: `puppy-tech.readysetui.top/signup`
+
+The `SiteLink` component automatically detects the current environment and adjusts the URL accordingly.
+- If you use standard `next/link` or `<a>` tags with `/signup`, it will break when viewing the site on the main marketplace domain (it will go to the root `/signup` instead of `/site/puppy-tech/signup`).
 
 ### 4. Functional Pages
 Landing pages must be fully functional.

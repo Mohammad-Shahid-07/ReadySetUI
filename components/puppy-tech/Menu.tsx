@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import Link from 'next/link';
+import { SiteLink } from '@/components/site-link';
 
 export default function Menu() {
   const meals = [
@@ -34,9 +34,9 @@ export default function Menu() {
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 p-8">
       <div className="max-w-5xl mx-auto">
         <div className="flex justify-between items-center mb-12">
-          <Link href="/" className="text-indigo-600 font-bold hover:underline">
+          <SiteLink href="/" className="text-indigo-600 font-bold hover:underline">
             ← Back to Home
-          </Link>
+          </SiteLink>
           <h1 className="text-4xl font-bold text-slate-900">Our Menu</h1>
           <div className="w-24"></div> {/* Spacer */}
         </div>
@@ -73,11 +73,11 @@ export default function Menu() {
         <div className="mt-16 bg-white rounded-2xl p-8 border border-slate-200 text-center">
           <h2 className="text-2xl font-bold mb-4">Not sure what to pick?</h2>
           <p className="text-slate-600 mb-6">Our algorithm can decide for you based on your puppy's profile.</p>
-          <Link href="/signup">
+          <SiteLink href="/signup">
             <Button size="lg" className="bg-slate-900 text-white hover:bg-slate-800">
               Take the Quiz <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-          </Link>
+          </SiteLink>
         </div>
       </div>
     </div>

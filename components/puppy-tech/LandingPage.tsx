@@ -18,7 +18,7 @@ import {
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import Link from 'next/link';
+import { SiteLink } from '@/components/site-link';
 
 export default function LandingPage() {
     return (
@@ -38,11 +38,11 @@ export default function LandingPage() {
                             <a href="#benefits" className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Benefits</a>
                             <a href="#pricing" className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Pricing</a>
                             <a href="#faq" className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">FAQ</a>
-                            <Link href="/signup">
+                            <SiteLink href="/signup">
                                 <Button className="bg-slate-900 text-white hover:bg-slate-800 rounded-full shadow-xl shadow-slate-900/10 hover:shadow-slate-900/20">
                                     Get Started
                                 </Button>
-                            </Link>
+                            </SiteLink>
                         </div>
                     </div>
                 </div>
@@ -76,16 +76,16 @@ export default function LandingPage() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-                        <Link href="/signup">
+                        <SiteLink href="/signup">
                             <Button size="lg" className="h-14 px-8 rounded-full text-lg bg-indigo-600 hover:bg-indigo-700 shadow-xl shadow-indigo-600/25 hover:shadow-indigo-600/40">
                                 Create Your Plan <ArrowRight className="ml-2 h-5 w-5" />
                             </Button>
-                        </Link>
-                        <Link href="/menu">
+                        </SiteLink>
+                        <SiteLink href="/menu">
                             <Button variant="outline" size="lg" className="h-14 px-8 rounded-full text-lg border-slate-200 hover:bg-slate-50">
                                 View Sample Menu
                             </Button>
-                        </Link>
+                        </SiteLink>
                     </div>
 
                     {/* Social Proof */}
@@ -348,14 +348,14 @@ export default function LandingPage() {
                                         </li>
                                     ))}
                                 </ul>
-                                <Link href="/signup" className="w-full">
+                                <SiteLink href="/signup" className="w-full">
                                     <Button className={cn(
                                         "w-full py-6 rounded-xl font-bold transition-all text-base",
                                         plan.popular ? "bg-white text-indigo-600 hover:bg-slate-100" : "bg-slate-700 text-white hover:bg-slate-600"
                                     )}>
                                         Choose Plan
                                     </Button>
-                                </Link>
+                                </SiteLink>
                             </div>
                         ))}
                     </div>
