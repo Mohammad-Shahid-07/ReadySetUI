@@ -29,6 +29,7 @@ export default function Home() {
     });
   }, [searchQuery, selectedTag]);
 
+
   // Helper to get the correct URL based on environment
   const getSiteUrl = (subdomain: string) => {
     if (!mounted) return "#";
@@ -39,9 +40,8 @@ export default function Home() {
     if (isLocalhost) {
       return `${protocol}//${subdomain}.localhost:3000`;
     } else {
-      // Production: Always link to the tenant domain (readysetui.top)
-      // regardless of which domain we are currently on (ui.eliteweb.top)
-      return `${protocol}//${subdomain}.readysetui.top`;
+      // Production: Link to the tenant subdomain on ui.eliteweb.top
+      return `${protocol}//${subdomain}.ui.eliteweb.top`;
     }
   };
 

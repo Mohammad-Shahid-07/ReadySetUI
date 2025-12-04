@@ -22,24 +22,29 @@ export default async function proxy(req: NextRequest) {
 
     if (process.env.NODE_ENV === "production") {
         // Production Domain Logic
+
+        // 1. ui.eliteweb.top (Main Domain)
         if (hostname === "ui.eliteweb.top") {
-            // Main Marketplace Domain -> No rewrite needed
-            currentHost = null;
-        } else if (hostname?.endsWith(".readysetui.top")) {
-            // Tenant Domain -> Rewrite to /site/[subdomain]
-            // e.g. puppy-tech.readysetui.top -> puppy-tech
+            currentHost = null; // No rewrite, serve app/page.tsx
+        }
+        // 2. *.ui.eliteweb.top (Tenant Subdomains)
+        else if (hostname?.endsWith(".ui.eliteweb.top")) {
+            currentHost = hostname.replace(".ui.eliteweb.top", "");
+        }
+        // 3. *.readysetui.top (Legacy/Alternative Tenant Subdomains)
+        else if (hostname?.endsWith(".readysetui.top")) {
             currentHost = hostname.replace(".readysetui.top", "");
-        } else if (hostname === "readysetui.top") {
-            // Root of tenant domain (optional, treat as main site or redirect)
+        }
+        // 4. readysetui.top (Legacy Root)
+        else if (hostname === "readysetui.top") {
             currentHost = null;
-        } else {
-            // Fallback for other domains (e.g. vercel.app)
-            // You might want to handle this differently
+        }
+        else {
+            // Fallback
             currentHost = null;
         }
     } else {
         // Development handling
-        // To test subdomains locally, you'd need to edit /etc/hosts to map site.localhost to 127.0.0.1
         if (hostname === "localhost:3000") {
             currentHost = null;
         } else if (hostname?.endsWith(".localhost:3000")) {
@@ -52,7 +57,7 @@ export default async function proxy(req: NextRequest) {
     // If we have a subdomain, rewrite the URL to our dynamic route
     if (currentHost) {
         // Rewrite to /site/[site]/[path]
-        // e.g. site-a.com/about -> /site/site-a/about
+        // e.g. puppy-tech.ui.eliteweb.top/about -> /site/puppy-tech/about
         url.pathname = `/site/${currentHost}${url.pathname}`;
         return NextResponse.rewrite(url);
     }
