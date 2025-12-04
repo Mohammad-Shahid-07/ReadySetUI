@@ -31,17 +31,22 @@ export default function Home() {
 
 
   // Helper to get the correct URL based on environment
+  // Helper to get the correct URL based on environment
   const getSiteUrl = (subdomain: string) => {
     if (!mounted) return "#";
-    // Check if we are on localhost
-    const isLocalhost = window.location.hostname.includes("localhost");
+
+    const hostname = window.location.hostname;
     const protocol = window.location.protocol;
 
-    if (isLocalhost) {
-      return `${protocol}//${subdomain}.localhost:3000`;
+    if (hostname.includes("ui.eliteweb.top")) {
+      // Production (Main): Path-based routing
+      return `/site/${subdomain}`;
+    } else if (hostname.includes("readysetui.top")) {
+      // Production (Legacy/Alt): Subdomain routing
+      return `${protocol}//${subdomain}.readysetui.top`;
     } else {
-      // Production: Link to the tenant subdomain on ui.eliteweb.top
-      return `${protocol}//${subdomain}.ui.eliteweb.top`;
+      // Localhost / Fallback: Path-based routing for safety
+      return `/site/${subdomain}`;
     }
   };
 
