@@ -3,6 +3,7 @@
 This file contains ideas for new landing pages/websites to be added to the Ready Set UI marketplace.
 **Rule**: Every time an AI creates a new site, it MUST add 2 new ideas to this list first.
 **Rule**: When a site is completed, mark it as **[DONE]** in the title.
+**Rule**: When a site is completed, Do not recreate it.
 **CRITICAL**: Ideas must be detailed, premium, and varied in style.
 
 1.  **ZenTask**: A minimalist, Japanese-inspired project management tool.**[DONE]**
@@ -11,19 +12,19 @@ This file contains ideas for new landing pages/websites to be added to the Ready
     -   **UI Style**: Clean lines, ample whitespace, ink-brush style iconography, and subtle paper texture overlays.
     -   **Typography**: Noto Serif JP for headings, Inter for UI elements.
 
-2.  **CryptoFolio**: A high-energy, neon-cyberpunk portfolio tracker.
+2.  **CryptoFolio**: A high-energy, neon-cyberpunk portfolio tracker.**[DONE]**
     -   **Vibe**: Fast, futuristic, data-heavy.
     -   **Design**: Deep void black background, neon purple (`#D946EF`) and cyan (`#06B6D4`) glowing accents.
     -   **UI Style**: Glitch effects on hover, real-time ticker tape animations, glassmorphism cards with heavy blur, and monospaced data displays.
     -   **Typography**: Space Mono or JetBrains Mono.
 
-3.  **Chef's Table**: A luxury private dining booking platform.
+3.  **Chef's Table**: A luxury private dining booking platform.**[DONE]**
     -   **Vibe**: Exclusive, elegant, expensive.
     -   **Design**: Rich dark chocolate or midnight blue background, gold foil gradients (`#D4AF37`) for buttons.
     -   **UI Style**: Full-screen high-res food photography with slow parallax scroll, thin elegant borders, and sophisticated fade-in animations.
     -   **Typography**: Playfair Display (Italic) for headlines, Lato for body.
 
-4.  **FitPulse**: A high-intensity interval training (HIIT) app.
+4.  **FitPulse**: A high-intensity interval training (HIIT) app.**[DONE]**
     -   **Vibe**: Energetic, aggressive, motivating.
     -   **Design**: High-contrast black and electric yellow (`#EAB308`) or vibrant orange (`#F97316`).
     -   **UI Style**: Slanted section dividers, big bold typography that breaks frame, video backgrounds of athletes, and "pulse" animations on CTAs.
@@ -76,3 +77,51 @@ This file contains ideas for new landing pages/websites to be added to the Ready
     -   **Design**: Matrix green (`#22C55E`) on pure black.
     -   **UI Style**: Hexagonal grid patterns, shield lock animations, "typing" text effects for headlines, and a radar scan background effect.
     -   **Typography**: Share Tech Mono.
+
+13. **EduSphere**: A modern online learning platform for professionals.
+    -   **Vibe**: Smart, accessible, progressive.
+    -   **Design**: Royal blue (`#2563EB`), clean white, and soft gray.
+    -   **UI Style**: Card-based course lists, progress bars, achievement badges, and a clean video player interface.
+    -   **Typography**: Inter or Public Sans.
+
+14. **TravelVista**: A luxury travel agency for exotic destinations.
+    -   **Vibe**: Adventurous, breathtaking, premium.
+    -   **Design**: Teal (`#14B8A6`), sunset orange (`#F97316`), and white.
+    -   **UI Style**: Full-width hero videos, map-based destination pickers, and glass cards over scenic backgrounds.
+    -   **Typography**: Montserrat or Raleway.
+
+15. **Artisan**: A marketplace for handmade, bespoke furniture.
+    -   **Vibe**: Craftsmanship, authentic, warm.
+    -   **Design**: Earthy tones (oak, clay, slate), serif typography, large imagery of textures.
+    -   **UI Style**: Masonry grid for products, "story behind the maker" sections, smooth fade-ins.
+    -   **Typography**: EB Garamond or Lora.
+
+16. **Vantage**: A drone photography service for real estate.
+    -   **Vibe**: Airy, panoramic, high-tech.
+    -   **Design**: Sky blues, cloud whites, and metallic silvers.
+    -   **UI Style**: Full-screen video backgrounds, horizontal scrolling galleries, "flyover" transition effects.
+    -   **Typography**: Exo 2 or Syncopate.
+
+17. **QuantumLeap**: An interactive educational platform for quantum computing.
+    -   **Vibe**: Mind-bending, academic yet futuristic, particle physics.
+    -   **Design**: Deep space black (`#0F172A`), glowing particle effects (electric blue `#3B82F6` and purple `#8B5CF6`).
+    -   **UI Style**: Interactive particle backgrounds (WebGL), 3D visualizations of qubits, glassmorphism cards with thin glowing borders, and "teleportation" transition effects between sections.
+    -   **Typography**: Exo 2 (Headings) and Inter (Body).
+
+18. **BloomBox**: A premium subscription service for rare and exotic indoor plants.**[DONE]**
+    -   **Vibe**: Organic, lush, premium, calming.
+    -   **Design**: Deep forest greens (`#14532D`), soft creams (`#FEFCE8`), and terracotta accents (`#B45309`).
+    -   **UI Style**: Parallax scrolling with floating plant leaves, "growth" animations on progress bars, soft drop shadows, and high-quality macro photography of leaf textures.
+    -   **Typography**: Playfair Display (Serif) for elegance, Lato (Sans) for readability.
+
+19. **Echo**: A voice-controlled smart home interface.
+    -   **Vibe**: Clean, futuristic, glass.
+    -   **Design**: White background, soft blue accents (`#3B82F6`), and glassmorphism cards.
+    -   **UI Style**: Voice wave animations, floating glass cards, and smooth transitions.
+    -   **Typography**: Inter or Roboto.
+
+20. **Glacier**: A premium bottled water brand.
+    -   **Vibe**: Cold, pure, expensive.
+    -   **Design**: Ice blue (`#E0F2FE`), silver, and white.
+    -   **UI Style**: Water ripple effects, condensation textures, and crisp, clean typography.
+    -   **Typography**: Helvetica Now or Neue Haas Grotesk.

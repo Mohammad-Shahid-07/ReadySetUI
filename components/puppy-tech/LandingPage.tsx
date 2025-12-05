@@ -1,9 +1,7 @@
 "use client"
-import React, { useState } from 'react';
+import React from 'react';
 import {
     Dog,
-    Zap,
-    ShieldCheck,
     Heart,
     ArrowRight,
     CheckCircle2,
@@ -12,44 +10,19 @@ import {
     Brain,
     Scale,
     Clock,
-    ChevronDown,
     X
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { SiteLink } from '@/components/site-link';
+import Layout from './layout';
 
 export default function LandingPage() {
     return (
-        <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-indigo-100 selection:text-indigo-900">
-            {/* Navigation */}
-            <nav className="fixed w-full bg-white/80 backdrop-blur-xl z-50 border-b border-slate-200/60">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-20">
-                        <div className="flex items-center gap-2">
-                            <div className="bg-indigo-600 p-2.5 rounded-xl shadow-lg shadow-indigo-600/20">
-                                <Dog className="h-6 w-6 text-white" />
-                            </div>
-                            <span className="font-bold text-xl tracking-tight text-slate-900">PuppyTech</span>
-                        </div>
-                        <div className="hidden md:flex items-center gap-8">
-                            <a href="#science" className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">The Science</a>
-                            <a href="#benefits" className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Benefits</a>
-                            <a href="#pricing" className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Pricing</a>
-                            <a href="#faq" className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">FAQ</a>
-                            <SiteLink href="/signup">
-                                <Button className="bg-slate-900 text-white hover:bg-slate-800 rounded-full shadow-xl shadow-slate-900/10 hover:shadow-slate-900/20">
-                                    Get Started
-                                </Button>
-                            </SiteLink>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-
+        <Layout>
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+            <section className="relative pt-12 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
                 <div className="absolute inset-0 -z-10">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-indigo-200/20 rounded-full blur-[120px] mix-blend-multiply"></div>
                     <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-purple-200/20 rounded-full blur-[100px] mix-blend-multiply"></div>
@@ -81,9 +54,9 @@ export default function LandingPage() {
                                 Create Your Plan <ArrowRight className="ml-2 h-5 w-5" />
                             </Button>
                         </SiteLink>
-                        <SiteLink href="/menu">
+                        <SiteLink href="/services">
                             <Button variant="outline" size="lg" className="h-14 px-8 rounded-full text-lg border-slate-200 hover:bg-slate-50">
-                                View Sample Menu
+                                View Services
                             </Button>
                         </SiteLink>
                     </div>
@@ -383,52 +356,6 @@ export default function LandingPage() {
                     </Accordion>
                 </div>
             </section>
-
-            {/* Footer */}
-            <footer className="bg-slate-50 border-t border-slate-200 pt-16 pb-8">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-4 gap-12 mb-12">
-                        <div className="col-span-1 md:col-span-2">
-                            <div className="flex items-center gap-2 mb-6">
-                                <div className="bg-indigo-600 p-2 rounded-lg">
-                                    <Dog className="h-5 w-5 text-white" />
-                                </div>
-                                <span className="font-bold text-xl tracking-tight">PuppyTech</span>
-                            </div>
-                            <p className="text-slate-500 max-w-sm">
-                                The world's first data-driven nutrition platform for puppies.
-                                Give them the health foundation they deserve.
-                            </p>
-                        </div>
-                        <div>
-                            <h4 className="font-bold mb-4">Product</h4>
-                            <ul className="space-y-2 text-slate-500">
-                                <li><a href="#" className="hover:text-indigo-600">Our Recipes</a></li>
-                                <li><a href="#" className="hover:text-indigo-600">The Science</a></li>
-                                <li><a href="#" className="hover:text-indigo-600">Reviews</a></li>
-                                <li><a href="#" className="hover:text-indigo-600">Pricing</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="font-bold mb-4">Company</h4>
-                            <ul className="space-y-2 text-slate-500">
-                                <li><a href="#" className="hover:text-indigo-600">About Us</a></li>
-                                <li><a href="#" className="hover:text-indigo-600">Careers</a></li>
-                                <li><a href="#" className="hover:text-indigo-600">Contact</a></li>
-                                <li><a href="#" className="hover:text-indigo-600">Privacy</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-sm text-slate-400">© 2024 Puppy Technologies Inc. All rights reserved.</p>
-                        <div className="flex gap-6">
-                            <a href="#" className="text-slate-400 hover:text-slate-900">Twitter</a>
-                            <a href="#" className="text-slate-400 hover:text-slate-900">Instagram</a>
-                            <a href="#" className="text-slate-400 hover:text-slate-900">LinkedIn</a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
+        </Layout>
     );
 }

@@ -6,6 +6,7 @@ export interface SiteData {
     tags: string[];
     color: string; // Gradient class for placeholder (fallback)
     image: string; // Path to thumbnail image
+    icon?: string; // Path to favicon/icon
     featured?: boolean;
 }
 
@@ -17,7 +18,8 @@ export const sites: SiteData[] = [
         subdomain: "puppy-tech",
         tags: ["SaaS", "E-commerce", "Bento Grid", "Startup"],
         color: "from-indigo-500 to-purple-600",
-        image: "/images/puppy-tech.png",
+        image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=2000&auto=format&fit=crop",
+        icon: "🐶",
         featured: true
     },
     {
@@ -27,7 +29,8 @@ export const sites: SiteData[] = [
         subdomain: "devflow",
         tags: ["Portfolio", "Personal", "Dark Mode", "Minimal"],
         color: "from-emerald-500 to-cyan-600",
-        image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop",
+        icon: "⚡",
         featured: true
     },
     {
@@ -38,6 +41,7 @@ export const sites: SiteData[] = [
         tags: ["SaaS", "Transport", "Premium", "Clone"],
         color: "from-gray-900 to-black",
         image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop",
+        icon: "🚗",
         featured: true
     },
     {
@@ -48,6 +52,51 @@ export const sites: SiteData[] = [
         tags: ["SaaS", "Productivity", "Minimalist", "Japanese"],
         color: "from-[#8FA893] to-[#5C7060]",
         image: "https://images.unsplash.com/photo-1499750310159-52f0f837ce1c?q=80&w=2069&auto=format&fit=crop",
+        icon: "🎋",
+        featured: true
+    },
+    {
+        id: "cryptofolio",
+        name: "CryptoFolio",
+        description: "A high-energy, neon-cyberpunk portfolio tracker.",
+        subdomain: "cryptofolio",
+        tags: ["SaaS", "Crypto", "Cyberpunk", "Dark Mode"],
+        color: "from-[#D946EF] to-[#06B6D4]",
+        image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2832&auto=format&fit=crop",
+        icon: "💎",
+        featured: true
+    },
+    {
+        id: "chefs-table",
+        name: "Chef's Table",
+        description: "A luxury private dining booking platform with a premium dark chocolate and gold aesthetic.",
+        subdomain: "chefs-table",
+        tags: ["Luxury", "Dining", "Booking", "Premium"],
+        color: "from-[#2C1810] to-[#D4AF37]",
+        image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070&auto=format&fit=crop",
+        icon: "🍽️",
+        featured: true
+    },
+    {
+        id: "bloom-box",
+        name: "BloomBox",
+        description: "A premium subscription service for rare and exotic indoor plants.",
+        subdomain: "bloom-box",
+        tags: ["E-commerce", "Subscription", "Nature", "Premium"],
+        color: "from-[#14532D] to-[#B45309]",
+        image: "https://images.unsplash.com/photo-1459156212016-c812468e2115?q=80&w=2000&auto=format&fit=crop",
+        icon: "🌿",
+        featured: true
+    },
+    {
+        id: "fit-pulse",
+        name: "FitPulse",
+        description: "A high-intensity interval training (HIIT) app with a neon-cyberpunk aesthetic.",
+        subdomain: "fit-pulse",
+        tags: ["Fitness", "SaaS", "High Energy", "Dark Mode"],
+        color: "from-[#EAB308] to-[#F97316]",
+        image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop",
+        icon: "⚡",
         featured: true
     },
 ];

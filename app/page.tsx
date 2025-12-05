@@ -85,7 +85,7 @@ export default function Home() {
             </h1>
             <p className="text-xl text-zinc-400 leading-relaxed max-w-xl">
               A curated collection of production-ready landing pages.
-              Built with Next.js 15, Tailwind, and Shadcn UI.
+              Built with Next.js 16, Tailwind, and Shadcn UI.
             </p>
           </div>
 

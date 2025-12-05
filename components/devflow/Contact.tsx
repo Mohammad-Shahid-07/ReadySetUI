@@ -1,97 +1,103 @@
-"use client";
+"use client"
+import React from 'react';
+import Layout from './layout';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Mail, MapPin, Send, Github, Twitter, Linkedin } from 'lucide-react';
 
-import { motion } from "framer-motion";
-import { Mail, MapPin, Phone } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-
-export default function Contact() {
+export default function ContactPage() {
     return (
-        <section id="contact" className="py-32 bg-zinc-950 relative overflow-hidden">
-            <div className="container px-6 mx-auto relative z-10">
-                <div className="grid lg:grid-cols-2 gap-16">
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                            Let's work together
-                        </h2>
-                        <p className="text-zinc-400 text-lg leading-relaxed mb-12">
-                            Have a project in mind? I'm always interested in hearing about new opportunities and interesting projects.
-                        </p>
+        <Layout>
+            <section className="py-24 lg:py-32">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+                        <div>
+                            <h1 className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-6 text-white">
+                                Let's Build Something <span className="text-indigo-400">Extraordinary</span>
+                            </h1>
+                            <p className="text-xl text-zinc-400 mb-12 leading-relaxed">
+                                Whether you have a groundbreaking startup idea or need to scale your existing platform, I'm here to help.
+                            </p>
 
-                        <div className="space-y-6">
-                            <div className="flex items-center gap-4 text-zinc-300">
-                                <div className="w-12 h-12 rounded-full bg-zinc-900 border border-white/5 flex items-center justify-center text-white">
-                                    <Mail className="w-5 h-5" />
+                            <div className="space-y-8 mb-12">
+                                <div className="flex items-start gap-4">
+                                    <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-white/5 flex items-center justify-center shrink-0">
+                                        <Mail className="w-6 h-6 text-indigo-400" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-lg font-bold text-white mb-1">Email Me</h3>
+                                        <a href="mailto:hello@devflow.com" className="text-zinc-400 hover:text-white transition-colors">hello@devflow.com</a>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p className="text-sm text-zinc-500">Email</p>
-                                    <p className="font-medium">hello@example.com</p>
+                                <div className="flex items-start gap-4">
+                                    <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-white/5 flex items-center justify-center shrink-0">
+                                        <MapPin className="w-6 h-6 text-indigo-400" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-lg font-bold text-white mb-1">Location</h3>
+                                        <p className="text-zinc-400">San Francisco, CA (Remote Friendly)</p>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="flex items-center gap-4 text-zinc-300">
-                                <div className="w-12 h-12 rounded-full bg-zinc-900 border border-white/5 flex items-center justify-center text-white">
-                                    <Phone className="w-5 h-5" />
-                                </div>
-                                <div>
-                                    <p className="text-sm text-zinc-500">Phone</p>
-                                    <p className="font-medium">+1 (555) 000-0000</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center gap-4 text-zinc-300">
-                                <div className="w-12 h-12 rounded-full bg-zinc-900 border border-white/5 flex items-center justify-center text-white">
-                                    <MapPin className="w-5 h-5" />
-                                </div>
-                                <div>
-                                    <p className="text-sm text-zinc-500">Location</p>
-                                    <p className="font-medium">San Francisco, CA</p>
+                            <div className="border-t border-white/5 pt-12">
+                                <h3 className="text-sm font-bold text-zinc-500 uppercase tracking-wider mb-6">Connect on Social</h3>
+                                <div className="flex gap-4">
+                                    {[
+                                        { icon: <Github className="w-5 h-5" />, href: "#" },
+                                        { icon: <Twitter className="w-5 h-5" />, href: "#" },
+                                        { icon: <Linkedin className="w-5 h-5" />, href: "#" }
+                                    ].map((social, i) => (
+                                        <a
+                                            key={i}
+                                            href={social.href}
+                                            className="w-12 h-12 rounded-full bg-zinc-900 border border-white/5 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-indigo-600 hover:border-indigo-500 transition-all"
+                                        >
+                                            {social.icon}
+                                        </a>
+                                    ))}
                                 </div>
                             </div>
                         </div>
-                    </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                        className="bg-zinc-900/50 border border-white/5 rounded-2xl p-8"
-                    >
-                        <form className="space-y-6">
-                            <div className="grid grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-zinc-400">First Name</label>
-                                    <Input placeholder="John" className="bg-zinc-950 border-white/10 text-white placeholder:text-zinc-600 focus-visible:ring-indigo-500" />
+                        <div className="bg-zinc-900/50 p-8 lg:p-10 rounded-3xl border border-white/5 backdrop-blur-sm">
+                            <form className="space-y-6">
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-bold text-zinc-300">Name</label>
+                                        <Input className="bg-zinc-950 border-white/10 text-white focus:border-indigo-500 h-12" placeholder="John Doe" />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-bold text-zinc-300">Email</label>
+                                        <Input className="bg-zinc-950 border-white/10 text-white focus:border-indigo-500 h-12" placeholder="john@example.com" />
+                                    </div>
                                 </div>
+
                                 <div className="space-y-2">
-                                    <label className="text-sm font-medium text-zinc-400">Last Name</label>
-                                    <Input placeholder="Doe" className="bg-zinc-950 border-white/10 text-white placeholder:text-zinc-600 focus-visible:ring-indigo-500" />
+                                    <label className="text-sm font-bold text-zinc-300">Project Type</label>
+                                    <select className="w-full h-12 rounded-md border border-white/10 bg-zinc-950 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-zinc-950">
+                                        <option>Web Application</option>
+                                        <option>Mobile App</option>
+                                        <option>E-commerce</option>
+                                        <option>Consulting</option>
+                                        <option>Other</option>
+                                    </select>
                                 </div>
-                            </div>
 
-                            <div className="space-y-2">
-                                <label className="text-sm font-medium text-zinc-400">Email</label>
-                                <Input type="email" placeholder="john@example.com" className="bg-zinc-950 border-white/10 text-white placeholder:text-zinc-600 focus-visible:ring-indigo-500" />
-                            </div>
+                                <div className="space-y-2">
+                                    <label className="text-sm font-bold text-zinc-300">Message</label>
+                                    <Textarea className="bg-zinc-950 border-white/10 text-white focus:border-indigo-500 min-h-[150px]" placeholder="Tell me about your project..." />
+                                </div>
 
-                            <div className="space-y-2">
-                                <label className="text-sm font-medium text-zinc-400">Message</label>
-                                <Textarea placeholder="Tell me about your project..." className="min-h-[150px] bg-zinc-950 border-white/10 text-white placeholder:text-zinc-600 focus-visible:ring-indigo-500" />
-                            </div>
-
-                            <button className="w-full py-4 rounded-lg bg-white text-black font-bold hover:bg-zinc-200 transition-colors">
-                                Send Message
-                            </button>
-                        </form>
-                    </motion.div>
+                                <Button className="w-full h-14 text-lg font-bold bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow-lg shadow-indigo-600/20">
+                                    Send Message <Send className="ml-2 w-5 h-5" />
+                                </Button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </Layout>
     );
 }
