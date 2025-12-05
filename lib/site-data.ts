@@ -40,6 +40,16 @@ export const sites: SiteData[] = [
         image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop",
         featured: true
     },
+    {
+        id: "zen-task",
+        name: "ZenTask",
+        description: "A minimalist project management tool for solo developers.",
+        subdomain: "zen-task",
+        tags: ["SaaS", "Productivity", "Minimalist", "Japanese"],
+        color: "from-[#8FA893] to-[#5C7060]",
+        image: "https://images.unsplash.com/photo-1499750310159-52f0f837ce1c?q=80&w=2069&auto=format&fit=crop",
+        featured: true
+    },
 ];
 
 export const allTags = Array.from(new Set(sites.flatMap(site => site.tags)));

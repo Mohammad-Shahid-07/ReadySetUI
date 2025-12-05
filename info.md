@@ -3,8 +3,8 @@
 ## Overview
 This project is a marketplace for landing pages. Users can browse available templates on the main domain and preview/host them on subdomains.
 
-- **Main Domain**: `https://readysetui.vercel.app/` (Lists all sites)
-- **Subdomains**: `https://[site].readysetui.vercel.app/` (Hosts specific landing pages)
+- **Main Domain**: `https://readysetui.top/` (Lists all sites)
+- **Subdomains**: `https://[site].readysetui.top/` (Hosts specific landing pages)
 
 ## Architecture
 
@@ -12,11 +12,11 @@ This project is a marketplace for landing pages. Users can browse available temp
 We use Next.js Proxy (formerly Middleware) to handle multi-tenancy. The proxy intercepts every request and checks the `Host` header.
 
 - **Main Domain Requests**:
-  - If the host is `readysetui.vercel.app` (or `localhost:3000`), the request is handled normally by `app/page.tsx`.
+  - If the host is `readysetui.top` (or `localhost:3000`), the request is handled normally by `app/page.tsx`.
 
 - **Subdomain Requests**:
-  - If the host is `[site].readysetui.vercel.app`, the proxy rewrites the URL to `/site/[site]${path}`.
-  - Example: `https://site-a.readysetui.vercel.app/about` -> rewritten to `/site/site-a/about`.
+  - If the host is `[site].readysetui.top`, the proxy rewrites the URL to `/site/[site]${path}`.
+  - Example: `https://site-a.readysetui.top/about` -> rewritten to `/site/site-a/about`.
 
 ### 2. Registry Pattern
 To support hundreds of sites, we use a **Registry Pattern**.

@@ -25,6 +25,11 @@ export const siteRegistry: Record<string, SiteComponentRegistry> = {
         signup: dynamic(() => import("@/components/uber-clone/Signup")),
         login: dynamic(() => import("@/components/uber-clone/Login")),
     },
+    "zen-task": {
+        home: dynamic(() => import("@/app/site/zen-task/page")),
+        login: dynamic(() => import("@/components/zen-task/login")),
+        signup: dynamic(() => import("@/components/zen-task/signup")),
+    },
 };
 
 // Helper function to get a component for a specific site and page
