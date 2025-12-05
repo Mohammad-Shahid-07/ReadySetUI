@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { SiteLink } from "@/components/site-link";
 import { motion } from "framer-motion";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const spaceMono = Space_Mono({
     subsets: ["latin"],
@@ -79,10 +80,11 @@ export default function Blog() {
                             >
                                 <div className="relative overflow-hidden border border-white/10 aspect-video mb-6">
                                     <div className="absolute inset-0 bg-[#D946EF]/20 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
-                                    <img
+                                    <Image
                                         src={post.image}
                                         alt={post.title}
-                                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                        fill
+                                        className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                                     />
                                     <div className="absolute top-4 left-4 bg-black/80 border border-[#06B6D4] text-[#06B6D4] px-3 py-1 text-xs font-mono font-bold z-20">
                                         {post.category}

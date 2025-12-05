@@ -16,7 +16,7 @@ export function Newsletter() {
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#FEFCE8] mb-6">
-                        Let's Grow Together
+                        Let&apos;s Grow Together
                     </h2>
                     <p className="text-[#FEFCE8]/80 text-lg max-w-2xl mx-auto mb-10">
                         Join our community and get 10% off your first order, plus weekly plant care tips and exclusive access to rare plant drops.

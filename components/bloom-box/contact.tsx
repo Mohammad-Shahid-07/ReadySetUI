@@ -16,7 +16,7 @@ export default function ContactPage() {
                     <div className="text-center mb-16">
                         <h1 className="text-5xl font-serif font-bold text-[#14532D] mb-6">Get in Touch</h1>
                         <p className="text-xl text-[#14532D]/70 max-w-2xl mx-auto">
-                            Have a question about your plant? Need help with your subscription? We're here to help you grow.
+                            Have a question about your plant? Need help with your subscription? We&apos;re here to help you grow.
                         </p>
                     </div>
 

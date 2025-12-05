@@ -37,7 +37,7 @@ export default function Navbar() {
                 <SiteLink href="/" className="flex items-center gap-2 group">
                     <ChefHat className="w-8 h-8 text-[#D4AF37] transition-transform group-hover:rotate-12" />
                     <span className="text-2xl font-serif font-bold text-white tracking-wider">
-                        Chef's <span className="text-[#D4AF37]">Table</span>
+                        Chef&apos;s <span className="text-[#D4AF37]">Table</span>
                     </span>
                 </SiteLink>
 

@@ -27,7 +27,7 @@ export default function TermsPage() {
 
                         <h3>3. Returns and Refunds</h3>
                         <p>
-                            Our "Happy Plant Guarantee" covers plants that arrive damaged or unhealthy. You must notify us within 14 days of delivery with photographic evidence to be eligible for a replacement or refund.
+                            Our &quot;Happy Plant Guarantee&quot; covers plants that arrive damaged or unhealthy. You must notify us within 14 days of delivery with photographic evidence to be eligible for a replacement or refund.
                         </p>
 
                         <h3>4. User Accounts</h3>

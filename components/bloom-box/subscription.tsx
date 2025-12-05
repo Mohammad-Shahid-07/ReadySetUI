@@ -4,7 +4,7 @@ import { Navbar } from "@/components/bloom-box/navbar";
 import { Footer } from "@/components/bloom-box/footer";
 import { SubscriptionTiers } from "@/components/bloom-box/subscription-tiers";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Check, Package, Calendar, Truck } from "lucide-react";
+import { Package, Calendar, Truck } from "lucide-react";
 
 export default function SubscriptionPage() {
     return (

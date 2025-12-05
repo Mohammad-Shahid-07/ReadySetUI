@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { SiteLink } from "@/components/site-link";
 import { cn } from "@/lib/utils";
-import { Leaf, ShoppingBag, Menu, X } from "lucide-react";
+import { Leaf, ShoppingBag, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 

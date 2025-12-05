@@ -47,7 +47,7 @@ export default function Hero() {
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         className="text-[12vw] leading-none font-serif font-bold text-white mix-blend-overlay"
                     >
-                        CHEF'S
+                        CHEF&apos;S
                     </motion.h1>
                     <motion.h1
                         initial={{ opacity: 0, y: 100 }}

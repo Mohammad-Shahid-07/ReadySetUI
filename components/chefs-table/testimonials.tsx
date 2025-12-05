@@ -22,7 +22,7 @@ const reviews = [
         rating: 5
     },
     {
-        text: "Dining at Chef's Table is not just a meal; it is a theatrical performance where flavor plays the lead role.",
+        text: "Dining at Chef&apos;s Table is not just a meal; it is a theatrical performance where flavor plays the lead role.",
         author: "Bon Appétit",
         rating: 5
     }
@@ -34,7 +34,7 @@ export default function Testimonials() {
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <h3 className="text-[#D4AF37] text-sm uppercase tracking-[0.2em] mb-4 font-serif">Acclaim</h3>
-                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-white">Critics' Choice</h2>
+                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-white">Critics&apos; Choice</h2>
                 </div>
 
                 <div className="max-w-4xl mx-auto">
@@ -45,7 +45,7 @@ export default function Testimonials() {
                                     <div className="flex flex-col items-center text-center p-6 md:p-12">
                                         <Quote className="w-12 h-12 text-[#D4AF37] mb-8 opacity-50" />
                                         <p className="text-xl md:text-3xl font-serif text-gray-200 leading-relaxed mb-8 italic">
-                                            "{review.text}"
+                                            &quot;{review.text}&quot;
                                         </p>
                                         <div className="flex gap-1 mb-4">
                                             {[...Array(review.rating)].map((_, i) => (

@@ -3,6 +3,7 @@
 import { SiteLink } from "@/components/site-link";
 import { Button } from "@/components/ui/button";
 import { Sun, Droplets, Thermometer, Sprout } from "lucide-react";
+import Image from "next/image";
 
 const tips = [
     {
@@ -35,10 +36,11 @@ export function CareGuidePreview() {
                     <div className="md:w-1/2 relative">
                         <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl rotate-3 transition-transform duration-500 hover:rotate-0">
                             {/* Placeholder for a high-quality care image */}
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?q=80&w=2090&auto=format&fit=crop"
                                 alt="Plant Care"
-                                className="w-full h-auto object-cover"
+                                fill
+                                className="object-cover"
                             />
                         </div>
                         <div className="absolute -bottom-6 -right-6 w-full h-full border-4 border-[#14532D] rounded-3xl -z-0 hidden md:block" />
@@ -47,7 +49,7 @@ export function CareGuidePreview() {
                     <div className="md:w-1/2">
                         <h2 className="text-4xl font-serif font-bold text-[#14532D] mb-6">Expert Care Tips</h2>
                         <p className="text-[#14532D]/70 mb-10 text-lg">
-                            We don't just sell plants; we help them thrive. Every BloomBox comes with detailed care instructions, but here are the basics to get you started.
+                            We don&apos;t just sell plants; we help them thrive. Every BloomBox comes with detailed care instructions, but here are the basics to get you started.
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">

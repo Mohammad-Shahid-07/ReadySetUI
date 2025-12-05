@@ -27,7 +27,7 @@ export default function PrivacyPage() {
                         <ul>
                             <li>Process and fulfill your orders and subscriptions.</li>
                             <li>Communicate with you about your account and our services.</li>
-                            <li>Send you newsletters and promotional offers (if you've opted in).</li>
+                            <li>Send you newsletters and promotional offers (if you&apos;ve opted in).</li>
                             <li>Improve our website and customer experience.</li>
                         </ul>
 

@@ -1,5 +1,5 @@
 import { SiteLink } from "@/components/site-link";
-import { Leaf, Instagram, Twitter, Facebook, Mail } from "lucide-react";
+import { Leaf, Instagram, Twitter, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 

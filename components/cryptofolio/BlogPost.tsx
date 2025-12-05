@@ -6,6 +6,7 @@ import { Space_Mono } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { SiteLink } from "@/components/site-link";
 import { ArrowLeft, Calendar, Clock, Share2, Twitter, Linkedin } from "lucide-react";
+import Image from "next/image";
 
 const spaceMono = Space_Mono({
     subsets: ["latin"],
@@ -32,10 +33,12 @@ export default function BlogPost() {
                         </h1>
                         <div className="flex items-center gap-6 text-sm font-mono text-gray-400 border-b border-white/10 pb-8">
                             <div className="flex items-center gap-2">
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop"
                                     alt="Author"
-                                    className="w-8 h-8 rounded-full border border-white/20"
+                                    width={32}
+                                    height={32}
+                                    className="rounded-full border border-white/20"
                                 />
                                 <span>David Kim</span>
                             </div>
@@ -61,26 +64,28 @@ export default function BlogPost() {
                         <p className="text-gray-400 mb-6">
                             While Layer 2s have successfully reduced gas fees and increased throughput, the real innovation
                             is happening at Layer 3. Application-specific chains (AppChains) are allowing developers to
-                            customize the execution environment to their specific needs, whether it's high-frequency trading
+                            customize the execution environment to their specific needs, whether it&apos;s high-frequency trading
                             or privacy-preserving transactions.
                         </p>
 
                         <div className="my-12 border-l-4 border-[#06B6D4] pl-6 py-2 bg-[#06B6D4]/5">
                             <p className="text-lg text-white italic">
-                                "The monolithic blockchain era is over. The future is modular, specialized, and interconnected."
+                                &quot;The monolithic blockchain era is over. The future is modular, specialized, and interconnected.&quot;
                             </p>
                         </div>
 
                         <h2 className="text-2xl font-bold text-white mt-12 mb-6">Zero-Knowledge Everything</h2>
                         <p className="text-gray-400 mb-6">
-                            Privacy is no longer an option; it's a necessity. ZK-Rollups are moving beyond simple scaling
+                            Privacy is no longer an option; it&apos;s a necessity. ZK-Rollups are moving beyond simple scaling
                             to enable fully private smart contracts. This will unlock use cases that were previously impossible
                             on public ledgers, such as institutional dark pools and private identity verification.
                         </p>
 
-                        <img
+                        <Image
                             src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=1200&auto=format&fit=crop"
                             alt="DeFi Chart"
+                            width={1200}
+                            height={600}
                             className="w-full h-auto border border-white/10 my-8"
                         />
 

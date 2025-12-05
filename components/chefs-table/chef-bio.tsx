@@ -44,7 +44,7 @@ export default function ChefBio() {
 
                         <div className="space-y-6 text-gray-300 font-light leading-relaxed text-lg">
                             <p>
-                                "Cooking is not just about ingredients; it&apos;s about memory, emotion, and the relentless pursuit of perfection."
+                                &quot;Cooking is not just about ingredients; it&apos;s about memory, emotion, and the relentless pursuit of perfection.&quot;
                             </p>
                             <p>
                                 With over two decades of experience in Michelin-starred kitchens across Paris, Tokyo, and New York, Chef Thorne brings a unique philosophy to Chef&apos;s Table. His approach marries classical French technique with the bold, umami-rich flavors of modern Asian cuisine.

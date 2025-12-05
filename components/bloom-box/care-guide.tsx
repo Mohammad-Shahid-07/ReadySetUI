@@ -5,6 +5,7 @@ import { Footer } from "@/components/bloom-box/footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Sun, Droplets, Thermometer, Bug, Scissors, Sprout } from "lucide-react";
+import Image from "next/image";
 
 const categories = [
     { name: "Watering", icon: Droplets, count: 12 },
@@ -67,10 +68,11 @@ export default function CareGuidePage() {
                         {articles.map((article) => (
                             <div key={article.title} className="group cursor-pointer">
                                 <div className="relative aspect-video rounded-2xl overflow-hidden mb-4">
-                                    <img
+                                    <Image
                                         src={article.image}
                                         alt={article.title}
-                                        className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
                                     <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-[#14532D]">
                                         {article.category}

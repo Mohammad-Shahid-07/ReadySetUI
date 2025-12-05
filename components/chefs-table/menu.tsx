@@ -65,7 +65,7 @@ export default function MenuPage() {
                                         <div key={itemIdx} className="group">
                                             <div className="flex justify-between items-baseline mb-2">
                                                 <h3 className="text-xl font-serif text-white group-hover:text-[#D4AF37] transition-colors">{item.name}</h3>
-                                                {'price' in item && <span className="text-[#D4AF37] font-serif">{(item as any).price}</span>}
+                                                {'price' in item && <span className="text-[#D4AF37] font-serif">{(item as { price: string }).price}</span>}
                                             </div>
                                             <p className="text-gray-500 font-light italic">{item.description}</p>
                                         </div>

@@ -34,14 +34,14 @@ export default function About() {
                     >
                         <p>
                             CryptoFolio was born from a simple need: clarity in the chaos of Web3.
-                            We believe that financial sovereignty shouldn't come at the cost of usability.
+                            We believe that financial sovereignty shouldn&apos;t come at the cost of usability.
                         </p>
                         <p>
                             Our mission is to build the most advanced, secure, and performant portfolio tracking engine in the metaverse.
                             We are a team of engineers, designers, and traders who live and breathe crypto.
                         </p>
                         <p>
-                            We don't track you. We help you track your assets.
+                            We don&apos;t track you. We help you track your assets.
                             Zero cookies. Zero trackers. Zero compromise.
                         </p>
                     </motion.div>

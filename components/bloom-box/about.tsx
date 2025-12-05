@@ -45,7 +45,7 @@ export default function AboutPage() {
                         <div className="md:w-1/2 space-y-6 text-[#14532D]">
                             <h2 className="text-3xl font-serif font-bold">From Seed to Sanctuary</h2>
                             <p className="text-lg leading-relaxed opacity-80">
-                                It began in a small apartment filled with over 100 plants. Our founder, Elena, realized that finding healthy, rare plants was a challenge for urban dwellers. Most nurseries didn't ship, and big-box stores only carried the basics.
+                                It began in a small apartment filled with over 100 plants. Our founder, Elena, realized that finding healthy, rare plants was a challenge for urban dwellers. Most nurseries didn&apos;t ship, and big-box stores only carried the basics.
                             </p>
                             <p className="text-lg leading-relaxed opacity-80">
                                 BloomBox was born out of a desire to bridge that gap. We partner with sustainable growers to curate a collection of unique, hard-to-find specimens and deliver them safely to your doorstep.
@@ -58,7 +58,7 @@ export default function AboutPage() {
                         <div className="text-center max-w-4xl mx-auto">
                             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-8">Sustainability First</h2>
                             <p className="text-lg md:text-xl leading-relaxed opacity-90 mb-12">
-                                We believe that loving nature means protecting it. That's why we use 100% plastic-free packaging, offset carbon emissions for every shipment, and source our plants from growers who prioritize eco-friendly practices.
+                                We believe that loving nature means protecting it. That&apos;s why we use 100% plastic-free packaging, offset carbon emissions for every shipment, and source our plants from growers who prioritize eco-friendly practices.
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                                 <div className="p-6 bg-[#FEFCE8]/10 rounded-2xl backdrop-blur-sm">

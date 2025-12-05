@@ -16,7 +16,7 @@ export default function Footer() {
                         <div className="flex items-center gap-2">
                             <ChefHat className="w-8 h-8 text-[#D4AF37]" />
                             <span className="text-2xl font-serif font-bold text-white tracking-wider">
-                                Chef's <span className="text-[#D4AF37]">Table</span>
+                                Chef&apos;s <span className="text-[#D4AF37]">Table</span>
                             </span>
                         </div>
                         <p className="text-sm leading-relaxed">
@@ -76,7 +76,7 @@ export default function Footer() {
                 </div>
 
                 <div className="border-t border-[#333] pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-wider uppercase">
-                    <p>&copy; {new Date().getFullYear()} Chef's Table. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Chef&apos;s Table. All rights reserved.</p>
                     <div className="flex gap-8">
                         <a href="#" className="hover:text-[#D4AF37] transition-colors">Privacy Policy</a>
                         <a href="#" className="hover:text-[#D4AF37] transition-colors">Terms of Service</a>
