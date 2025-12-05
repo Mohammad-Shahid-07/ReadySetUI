@@ -175,8 +175,31 @@ export async function GET(
     const usedDependencies = detectUsedPackages(allImports, originalPkg.dependencies || {});
     const usedDevDependencies = detectUsedPackages(allImports, originalPkg.devDependencies || {});
 
-    // Always include these dev dependencies
-    const requiredDevDeps = ["typescript", "@types/node", "@types/react", "@types/react-dom", "postcss", "tailwindcss", "eslint", "eslint-config-next"];
+    // Always include these essential dependencies (they're used by Tailwind/UI)
+    const requiredDeps = [
+        "tailwind-merge",
+        "clsx",
+        "class-variance-authority",
+        "lucide-react"
+    ];
+    for (const dep of requiredDeps) {
+        if (originalPkg.dependencies?.[dep]) {
+            usedDependencies[dep] = originalPkg.dependencies[dep];
+        }
+    }
+
+    // Always include these dev dependencies for Tailwind/TypeScript/Next.js
+    const requiredDevDeps = [
+        "typescript",
+        "@types/node",
+        "@types/react",
+        "@types/react-dom",
+        "tailwindcss",
+        "@tailwindcss/postcss",
+        "postcss",
+        "eslint",
+        "eslint-config-next"
+    ];
     for (const dep of requiredDevDeps) {
         if (originalPkg.devDependencies?.[dep]) {
             usedDevDependencies[dep] = originalPkg.devDependencies[dep];
@@ -230,34 +253,60 @@ export async function GET(
     const siteLayoutFile = siteFiles.find(f => f.path === "layout.tsx");
 
     if (siteLayoutFile) {
-        const transformedLayout = transformCode(siteLayoutFile.content, site);
+        // Transform the site's layout and use it directly as app/layout.tsx
+        let layoutContent = transformCode(siteLayoutFile.content, site);
 
-        const rootLayout = `import type { Metadata } from "next";
+        // Check if the layout already has html/body tags (it's a root layout)
+        const hasHtmlTag = layoutContent.includes("<html");
+
+        if (hasHtmlTag) {
+            // Already a proper root layout, just add metadata import if needed
+            if (!layoutContent.includes("import type { Metadata }")) {
+                layoutContent = `import type { Metadata } from "next";\n${layoutContent}`;
+            }
+            if (!layoutContent.includes("export const metadata")) {
+                // Add metadata before the export default
+                layoutContent = layoutContent.replace(
+                    /export default function/,
+                    `export const metadata: Metadata = {
+  title: "${siteName}",
+  description: "${siteDescription}",
+};
+
+export default function`
+                );
+            }
+            // Add globals.css import if not present
+            if (!layoutContent.includes('./globals.css')) {
+                layoutContent = layoutContent.replace(
+                    /import type { Metadata }/,
+                    `import type { Metadata } from "next";\nimport "./globals.css"`
+                );
+            }
+            zip.file("app/layout.tsx", layoutContent);
+        } else {
+            // It's a wrapper component (like chefs-table layout), wrap it properly
+            // Extract font imports and other imports from the layout
+            const fontImportMatch = layoutContent.match(/import\s*{[^}]+}\s*from\s*["']next\/font\/google["'];?/g);
+            const fontImports = fontImportMatch ? fontImportMatch.join("\n") : "";
+
+            // Create a proper root layout that uses this as the main wrapper
+            const rootLayout = `import type { Metadata } from "next";
 import "./globals.css";
-import SiteLayout from "@/components/layout";
+${fontImports}
 
 export const metadata: Metadata = {
   title: "${siteName}",
   description: "${siteDescription}",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body>
-        <SiteLayout>{children}</SiteLayout>
-      </body>
-    </html>
-  );
-}
+// Re-export the site layout as the root layout wrapper
+${layoutContent}
 `;
-        zip.file("app/layout.tsx", rootLayout);
-        zip.file("components/layout.tsx", transformedLayout);
+            zip.file("app/layout.tsx", rootLayout);
+        }
     } else {
+        // No site layout, create a generic one
         const rootLayout = `import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";

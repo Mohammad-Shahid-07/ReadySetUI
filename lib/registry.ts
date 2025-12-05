@@ -14,8 +14,8 @@ export type SiteComponentRegistry = {
 export const siteRegistry: Record<string, SiteComponentRegistry> = {
     "puppy-tech": {
         home: dynamic(() => import("@/components/puppy-tech/page")),
-        menu: dynamic(() => import("@/components/puppy-tech/Menu")),
-        signup: dynamic(() => import("@/components/puppy-tech/Signup")),
+        menu: dynamic(() => import("@/components/puppy-tech/menu")),
+        signup: dynamic(() => import("@/components/puppy-tech/signup")),
         about: dynamic(() => import("@/components/puppy-tech/about")),
         services: dynamic(() => import("@/components/puppy-tech/services")),
         contact: dynamic(() => import("@/components/puppy-tech/contact")),
@@ -36,8 +36,8 @@ export const siteRegistry: Record<string, SiteComponentRegistry> = {
     },
     "uber-clone": {
         home: dynamic(() => import("@/components/uber-clone/page")),
-        signup: dynamic(() => import("@/components/uber-clone/Signup")),
-        login: dynamic(() => import("@/components/uber-clone/Login")),
+        signup: dynamic(() => import("@/components/uber-clone/signup")),
+        login: dynamic(() => import("@/components/uber-clone/login")),
     },
     "zen-task": {
         home: dynamic(() => import("@/components/zen-task/page")),
@@ -46,13 +46,13 @@ export const siteRegistry: Record<string, SiteComponentRegistry> = {
     },
     "cryptofolio": {
         home: dynamic(() => import("@/components/cryptofolio/page")),
-        about: dynamic(() => import("@/components/cryptofolio/About")),
-        pricing: dynamic(() => import("@/components/cryptofolio/Pricing")),
-        login: dynamic(() => import("@/components/cryptofolio/Login")),
-        signup: dynamic(() => import("@/components/cryptofolio/Signup")),
-        contact: dynamic(() => import("@/components/cryptofolio/Contact")),
-        blog: dynamic(() => import("@/components/cryptofolio/Blog")),
-        "blog-post": dynamic(() => import("@/components/cryptofolio/BlogPost")),
+        about: dynamic(() => import("@/components/cryptofolio/about")),
+        pricing: dynamic(() => import("@/components/cryptofolio/pricing")),
+        login: dynamic(() => import("@/components/cryptofolio/login")),
+        signup: dynamic(() => import("@/components/cryptofolio/signup")),
+        contact: dynamic(() => import("@/components/cryptofolio/contact")),
+        blog: dynamic(() => import("@/components/cryptofolio/blog")),
+        "blog-post": dynamic(() => import("@/components/cryptofolio/blog-post")),
     },
     "chefs-table": {
         home: dynamic(() => import("@/components/chefs-table/page")),
