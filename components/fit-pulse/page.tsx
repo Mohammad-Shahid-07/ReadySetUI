@@ -28,7 +28,7 @@ export default function Page() {
                         Why <span className="text-yellow-500">FitPulse?</span>
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto">
-                        We don't just train bodies. We forge warriors. Experience the difference of a gym built for performance.
+                        We don&apos;t just train bodies. We forge warriors. Experience the difference of a gym built for performance.
                     </p>
                 </div>
 
@@ -68,7 +68,7 @@ export default function Page() {
                         Join The <span className="text-yellow-500">Movement</span>
                     </h2>
                     <p className="text-xl text-gray-400 mb-12">
-                        Don't let another day pass. Start your transformation now.
+                        Don&apos;t let another day pass. Start your transformation now.
                     </p>
 
                     <div className="flex flex-col items-center gap-8">
@@ -89,7 +89,7 @@ export default function Page() {
     );
 }
 
-function FeatureCard({ icon: Icon, title, description }: { icon: any, title: string, description: string }) {
+function FeatureCard({ icon: Icon, title, description }: { icon: React.ElementType, title: string, description: string }) {
     return (
         <div className="p-8 bg-zinc-900 border border-white/10 hover:border-yellow-500 transition-colors group">
             <div className="w-16 h-16 bg-black rounded-lg flex items-center justify-center mb-6 group-hover:bg-yellow-500 transition-colors">

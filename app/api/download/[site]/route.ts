@@ -1,3 +1,4 @@
+
 import { NextRequest, NextResponse } from "next/server";
 import JSZip from "jszip";
 import fs from "fs/promises";
@@ -80,10 +81,25 @@ export async function GET(
     }
 
     // 3. App Directory
-    // Create layout.tsx
+    // Read site files first as we need them for layout and page generation
+    const siteComponentsPath = path.join(projectRoot, "components", site);
+    const siteFiles = await readDirRecursive(siteComponentsPath);
+
+    // Check if site has a layout.tsx
+    let siteLayoutPath = "";
+    const siteLayoutFile = siteFiles.find(f => f.path === "layout.tsx");
+
+    if (siteLayoutFile) {
+        // We will rename it to SiteLayout.tsx in components to avoid conflict
+        // and to be easily imported.
+        siteLayoutPath = "SiteLayout";
+    }
+
+    // Create app/layout.tsx
     const layoutContent = `import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+${siteLayoutPath ? `import SiteLayout from "@/components/SiteLayout";` : ""}
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -110,7 +126,7 @@ export default function RootLayout({
       <body
         className={\`\${geistSans.variable} \${geistMono.variable} antialiased\`}
       >
-        {children}
+        ${siteLayoutPath ? `<SiteLayout>{children}</SiteLayout>` : "{children}"}
       </body>
     </html>
   );
@@ -125,23 +141,11 @@ export default function RootLayout({
     }
 
     // Create page.tsx
-    // We assume the main component is LandingPage.tsx for simplicity in this generic generator,
-    // or we check what's in the folder.
-    // For a robust solution, we'd parse registry.ts, but here we'll assume the user follows the convention:
-    // components/[site]/LandingPage.tsx is the entry.
-    // If not, we'll try to find index.tsx or page.tsx or similar.
-
-    // Actually, let's look at what files are in components/[site]
-    const siteComponentsPath = path.join(projectRoot, "components", site);
-    const siteFiles = await readDirRecursive(siteComponentsPath);
-
     // Find the likely entry point (LandingPage.tsx or similar)
-    // The registry says: "home": dynamic(() => import("@/components/uber-clone/LandingPage"))
-    // We can try to guess it's LandingPage.tsx
     let entryComponent = "LandingPage";
     if (!siteFiles.find(f => f.path === "LandingPage.tsx")) {
         // Fallback: take the first file that looks like a component
-        const likely = siteFiles.find(f => f.path.endsWith(".tsx") && !f.path.includes("Provider"));
+        const likely = siteFiles.find(f => f.path.endsWith(".tsx") && !f.path.includes("Provider") && f.path !== "layout.tsx");
         if (likely) {
             entryComponent = likely.path.replace(".tsx", "");
         }
@@ -161,27 +165,19 @@ export default function Home() {
     // And update imports
     for (const file of siteFiles) {
         let content = file.content;
+        let filePath = file.path;
+
+        // Rename layout.tsx to SiteLayout.tsx if needed
+        if (filePath === "layout.tsx") {
+            filePath = "SiteLayout.tsx";
+        }
 
         // Fix imports:
         // 1. Remove site-specific path: "@/components/uber-clone/..." -> "@/components/..."
-        // Regex to replace @/components/[site]/X with @/components/X
         const siteImportRegex = new RegExp(`@/components/${site}/`, "g");
         content = content.replace(siteImportRegex, "@/components/");
 
-        // 2. Fix relative imports if they were relying on being in the same folder?
-        // If they were in the same folder, they use "./Foo". 
-        // Since we are flattening/keeping the structure relative to components/, "./Foo" still works 
-        // IF we keep the internal structure of components/[site] as components/.
-        // Yes, we are moving components/[site]/* to components/*.
-
-        // 3. Fix SiteLink? 
-        // The standalone app might not have the complex routing. 
-        // But we should copy SiteLink or replace it with next/link.
-        // User said "change a few things".
-        // If we copy SiteLink, it needs to work.
-        // Let's copy SiteLink to components/site-link.tsx and ensure it works or simplify it.
-
-        zip.file(path.join("components", file.path), content);
+        zip.file(path.join("components", filePath), content);
     }
 
     // 5. Shared Components (UI & Utils)
@@ -201,17 +197,11 @@ export default function Home() {
     // Copy SiteLink if used
     const siteLinkContent = await readFileSafe(path.join(projectRoot, "components", "site-link.tsx"));
     if (siteLinkContent) {
-        // We might want to simplify SiteLink for the standalone app since it doesn't need subdomain logic
-        // But keeping it as is usually doesn't hurt if it defaults to standard behavior.
         zip.file("components/site-link.tsx", siteLinkContent);
     }
 
     // 6. Public Assets
-    // Copy public folder (optional but good)
-    // For now, let's skip deep public copying to save time/bandwidth unless requested, 
-    // but we should at least create the folder.
     zip.folder("public");
-
 
     // Generate ZIP
     const zipContent = await zip.generateAsync({ type: "blob" });

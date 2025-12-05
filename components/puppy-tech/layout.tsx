@@ -2,7 +2,7 @@ import React from 'react';
 import { Dog, Menu as MenuIcon, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SiteLink } from '@/components/site-link';
-import { cn } from '@/lib/utils';
+
 
 export function Navbar() {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -77,7 +77,7 @@ export function Footer() {
                             <span className="font-bold text-xl tracking-tight">PuppyTech</span>
                         </div>
                         <p className="text-slate-500 max-w-sm">
-                            The world's first data-driven nutrition platform for puppies.
+                            The world&apos;s first data-driven nutrition platform for puppies.
                             Give them the health foundation they deserve.
                         </p>
                     </div>

@@ -8,6 +8,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel";
+import Image from "next/image";
 
 const testimonials = [
     {
@@ -70,11 +71,11 @@ export function Testimonials() {
                                             ))}
                                         </div>
                                         <p className="text-gray-300 font-mono mb-8 leading-relaxed">
-                                            "{t.content}"
+                                            &quot;{t.content}&quot;
                                         </p>
                                     </div>
                                     <div className="flex items-center gap-4">
-                                        <img src={t.image} alt={t.name} className="w-12 h-12 rounded-full border border-white/20" />
+                                        <Image src={t.image} alt={t.name} width={48} height={48} className="rounded-full border border-white/20" />
                                         <div>
                                             <div className="text-white font-bold font-mono">{t.name}</div>
                                             <div className="text-[#06B6D4] text-xs font-mono">{t.role}</div>

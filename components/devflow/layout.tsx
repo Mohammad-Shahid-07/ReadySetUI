@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Menu, X, Github, Twitter, Linkedin, Code2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SiteLink } from '@/components/site-link';
-import { cn } from '@/lib/utils';
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +28,7 @@ export function Navbar() {
                         <SiteLink href="/docs" className="text-sm font-medium text-zinc-400 hover:text-indigo-400 transition-colors">Docs</SiteLink>
                         <SiteLink href="/contact">
                             <Button variant="outline" className="border-indigo-500/20 hover:bg-indigo-500/10 hover:text-indigo-400 text-zinc-300">
-                                Let's Talk
+                                Let&apos;s Talk
                             </Button>
                         </SiteLink>
                     </div>
@@ -54,7 +53,7 @@ export function Navbar() {
                     <SiteLink href="/docs" className="text-sm font-medium text-zinc-400 hover:text-indigo-400">Docs</SiteLink>
                     <SiteLink href="/contact">
                         <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white">
-                            Let's Talk
+                            Let&apos;s Talk
                         </Button>
                     </SiteLink>
                 </div>

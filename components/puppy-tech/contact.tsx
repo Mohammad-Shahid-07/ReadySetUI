@@ -11,7 +11,7 @@ export default function ContactPage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h1 className="text-4xl font-bold mb-4 text-slate-900">Get in Touch</h1>
-                        <p className="text-xl text-slate-600">We'd love to hear about your furry friend.</p>
+                        <p className="text-xl text-slate-600">We&apos;d love to hear about your furry friend.</p>
                     </div>
 
                     <div className="grid lg:grid-cols-3 gap-8">
@@ -31,7 +31,7 @@ export default function ContactPage() {
                                     <Mail className="w-6 h-6 text-indigo-600" />
                                 </div>
                                 <h3 className="font-bold text-lg mb-2">Email Us</h3>
-                                <p className="text-slate-600 mb-1">We'll get back to you within 24h.</p>
+                                <p className="text-slate-600 mb-1">We&apos;ll get back to you within 24h.</p>
                                 <a href="mailto:hello@puppytech.com" className="text-indigo-600 font-bold hover:underline">hello@puppytech.com</a>
                             </div>
 

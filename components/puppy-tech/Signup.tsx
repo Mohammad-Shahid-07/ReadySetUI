@@ -16,14 +16,14 @@ export default function Signup() {
             <div className="mb-4 text-center">
               <span className="font-bold text-xl tracking-tight text-indigo-600">PuppyTech</span>
             </div>
-            <CardTitle className="text-2xl text-center">Let's get started</CardTitle>
+            <CardTitle className="text-2xl text-center">Let&apos;s get started</CardTitle>
             <CardDescription className="text-center">
               Tell us a bit about your puppy to get a custom plan.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="name">Puppy's Name</Label>
+              <Label htmlFor="name">Puppy&apos;s Name</Label>
               <Input id="name" placeholder="e.g. Cooper" />
             </div>
             <div className="space-y-2">

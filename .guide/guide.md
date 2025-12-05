@@ -120,6 +120,9 @@ We use Next.js Middleware to handle multi-tenancy across our two domains.
 ### 4. Registry Pattern & Metadata
 To add a site, you must follow the **Registry Pattern**:
 1.  **Create Components**: `components/[site-name]/`
+    -   **Naming Convention**:
+        -   The main landing page component MUST be named `page.tsx` (e.g., `components/zen-task/page.tsx`).
+        -   The site layout component MUST be named `layout.tsx` (e.g., `components/zen-task/layout.tsx`).
 2.  **Register Site**: Add entry to `lib/registry.ts`.
 3.  **Add Metadata**: Add details to `lib/site-data.ts`.
     -   **Icon**: You MUST add an emoji icon for the site favicon (e.g., `icon: "⚡"`).

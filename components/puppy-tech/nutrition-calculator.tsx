@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
+
 import { Slider } from '@/components/ui/slider';
 import { Dog, Activity, Scale, Calculator } from 'lucide-react';
 
@@ -74,8 +74,8 @@ export function NutritionCalculator() {
                                 key={level}
                                 onClick={() => setActivity(level)}
                                 className={`py-2 px-4 rounded-lg text-sm font-bold capitalize transition-all ${activity === level
-                                        ? 'bg-indigo-600 text-white shadow-md'
-                                        : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                                    ? 'bg-indigo-600 text-white shadow-md'
+                                    : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
                                     }`}
                             >
                                 {level}

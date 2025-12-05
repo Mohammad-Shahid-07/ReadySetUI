@@ -72,7 +72,7 @@ export default function Menu() {
 
           <div className="mt-16 bg-white rounded-2xl p-8 border border-slate-200 text-center">
             <h2 className="text-2xl font-bold mb-4">Not sure what to pick?</h2>
-            <p className="text-slate-600 mb-6">Our algorithm can decide for you based on your puppy's profile.</p>
+            <p className="text-slate-600 mb-6">Our algorithm can decide for you based on your puppy&apos;s profile.</p>
             <SiteLink href="/signup">
               <Button size="lg" className="bg-slate-900 text-white hover:bg-slate-800">
                 Take the Quiz <ArrowRight className="ml-2 h-4 w-4" />

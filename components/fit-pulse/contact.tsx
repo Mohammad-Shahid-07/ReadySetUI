@@ -14,7 +14,7 @@ export default function Page() {
                         Get In <span className="text-yellow-500">Touch</span>
                     </h1>
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                        Ready to start? Have questions? We're here.
+                        Ready to start? Have questions? We&apos;re here.
                     </p>
                 </div>
             </div>
@@ -69,7 +69,7 @@ export default function Page() {
     );
 }
 
-function ContactItem({ icon: Icon, title, content }: { icon: any, title: string, content: string }) {
+function ContactItem({ icon: Icon, title, content }: { icon: React.ElementType, title: string, content: string }) {
     return (
         <div className="flex items-start gap-4">
             <div className="w-12 h-12 bg-yellow-500 flex items-center justify-center shrink-0">

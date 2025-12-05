@@ -3,6 +3,7 @@
 import React from "react";
 import Layout from "./layout";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function SustainabilityPage() {
     return (
@@ -46,10 +47,11 @@ export default function SustainabilityPage() {
                             transition={{ duration: 0.8 }}
                             className="aspect-square bg-gray-800 relative overflow-hidden"
                         >
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=2070&auto=format&fit=crop"
                                 alt="Farm"
-                                className="w-full h-full object-cover"
+                                fill
+                                className="object-cover"
                             />
                         </motion.div>
                     </div>

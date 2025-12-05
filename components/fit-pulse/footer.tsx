@@ -97,7 +97,7 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
     );
 }
 
-function SocialIcon({ icon: Icon }: { icon: any }) {
+function SocialIcon({ icon: Icon }: { icon: React.ElementType }) {
     return (
         <a
             href="#"

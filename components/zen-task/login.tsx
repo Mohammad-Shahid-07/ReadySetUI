@@ -64,7 +64,7 @@ export default function ZenTaskLogin() {
                     </form>
 
                     <div className="mt-8 text-center text-sm text-gray-500">
-                        Don't have an account?{' '}
+                        Don&apos;t have an account?{' '}
                         <SiteLink href="/signup" className="text-[#10B981] font-medium hover:underline">
                             Sign up
                         </SiteLink>

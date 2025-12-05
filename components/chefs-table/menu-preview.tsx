@@ -3,6 +3,7 @@
 import React, { useRef } from "react";
 import { SiteLink } from "@/components/site-link";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 const dishes = [
     {
@@ -54,10 +55,11 @@ export default function MenuPreview() {
 
                     {dishes.map((dish, i) => (
                         <div key={i} className="relative h-[70vh] w-[40vw] shrink-0 overflow-hidden group">
-                            <img
+                            <Image
                                 src={dish.image}
                                 alt={dish.name}
-                                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
                             />
                             <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 to-transparent">
                                 <h3 className="text-3xl font-serif text-white mb-2">{dish.name}</h3>

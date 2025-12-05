@@ -18,7 +18,7 @@ export default function About() {
                             About Me
                         </h2>
                         <p className="text-zinc-400 text-lg leading-relaxed mb-6">
-                            I'm a passionate developer with over 5 years of experience in building digital products. I specialize in the JavaScript ecosystem, with a deep focus on React, Next.js, and Node.js.
+                            I&apos;m a passionate developer with over 5 years of experience in building digital products. I specialize in the JavaScript ecosystem, with a deep focus on React, Next.js, and Node.js.
                         </p>
                         <p className="text-zinc-400 text-lg leading-relaxed mb-8">
                             My journey started with a curiosity for how things work on the web, and it has evolved into a career where I get to solve complex problems and create beautiful user interfaces every day.

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Quote, Star } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
     {
@@ -64,14 +65,16 @@ export function TestimonialCarousel() {
                         </div>
 
                         <p className="text-2xl md:text-4xl font-light text-white mb-8 italic leading-relaxed">
-                            "{testimonials[current].content}"
+                            &quot;{testimonials[current].content}&quot;
                         </p>
 
                         <div className="flex flex-col items-center gap-4">
                             <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-yellow-500">
-                                <img
+                                <Image
                                     src={testimonials[current].image}
                                     alt={testimonials[current].name}
+                                    width={64}
+                                    height={64}
                                     className="w-full h-full object-cover"
                                 />
                             </div>

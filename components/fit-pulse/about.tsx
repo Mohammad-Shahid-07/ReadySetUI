@@ -1,6 +1,7 @@
 import { Layout } from "./layout";
 import { SlantedSection } from "./slanted-section";
 import { StatsCounter } from "./stats-counter";
+import Image from "next/image";
 
 export default function Page() {
     return (
@@ -24,15 +25,16 @@ export default function Page() {
                             FitPulse was founded on a simple belief: that everyone has an inner athlete waiting to be unleashed. We provide the environment, the coaching, and the community to help you find that power.
                         </p>
                         <p className="text-gray-400 leading-relaxed">
-                            We reject mediocrity. We embrace the grind. Whether you're a seasoned pro or just starting, we demand your best effort, and in return, we give you the best training experience possible.
+                            We reject mediocrity. We embrace the grind. Whether you&apos;re a seasoned pro or just starting, we demand your best effort, and in return, we give you the best training experience possible.
                         </p>
                     </div>
                     <div className="relative">
                         <div className="absolute inset-0 bg-yellow-500 transform translate-x-4 translate-y-4" />
-                        <img
+                        <Image
                             src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=2069&auto=format&fit=crop"
                             alt="Gym Interior"
-                            className="relative w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                            fill
+                            className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
                         />
                     </div>
                 </div>

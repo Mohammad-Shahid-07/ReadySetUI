@@ -39,7 +39,7 @@ export default function Projects() {
                     <div>
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Featured Projects</h2>
                         <p className="text-zinc-400 max-w-xl">
-                            Here are some of the projects I've worked on recently. Each one presented unique challenges and learning opportunities.
+                            Here are some of the projects I&apos;ve worked on recently. Each one presented unique challenges and learning opportunities.
                         </p>
                     </div>
                     <a href="#" className="text-white border-b border-white pb-1 hover:text-zinc-300 hover:border-zinc-300 transition-colors">

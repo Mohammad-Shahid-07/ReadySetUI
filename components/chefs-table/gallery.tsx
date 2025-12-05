@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const images = [
     "https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?q=80&w=2070&auto=format&fit=crop", // Interior
@@ -32,10 +33,11 @@ export default function Gallery() {
                             className="relative aspect-square overflow-hidden group cursor-pointer"
                         >
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/0 transition-colors duration-500 z-10" />
-                            <img
+                            <Image
                                 src={src}
                                 alt={`Gallery image ${index + 1}`}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-110"
                             />
                         </motion.div>
                     ))}

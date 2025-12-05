@@ -1,9 +1,8 @@
 "use client"
 import React from 'react';
+import Image from 'next/image';
 import Layout from './layout';
-import { SiteLink } from '@/components/site-link';
-import { Button } from '@/components/ui/button';
-import { Search, Info, Bone, Activity, Moon } from 'lucide-react';
+import { Search, Bone, Activity, Moon } from 'lucide-react';
 
 export default function CareGuidePage() {
     return (
@@ -68,7 +67,7 @@ export default function CareGuidePage() {
                         ].map((item, i) => (
                             <div key={i} className="group relative rounded-3xl overflow-hidden shadow-lg cursor-pointer">
                                 <div className="aspect-[4/5]">
-                                    <img src={item.img} alt={item.breed} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                                    <Image src={item.img} alt={item.breed} width={1000} height={1000} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                                 </div>
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
                                     <span className="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-2">{item.group} Group</span>

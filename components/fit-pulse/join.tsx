@@ -1,7 +1,6 @@
 "use client";
 
 import { Layout } from "./layout";
-import { SlantedSection } from "./slanted-section";
 import { PulseButton } from "./pulse-button";
 import { SiteLink } from "@/components/site-link";
 

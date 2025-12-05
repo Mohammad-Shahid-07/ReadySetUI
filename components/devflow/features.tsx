@@ -129,7 +129,7 @@ export default function FeaturesPage() {
             <section className="py-24 text-center">
                 <div className="max-w-3xl mx-auto px-4">
                     <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">Ready to build something amazing?</h2>
-                    <p className="text-zinc-400 text-lg mb-10">Let's turn your vision into a high-performance reality.</p>
+                    <p className="text-zinc-400 text-lg mb-10">Let&apos;s turn your vision into a high-performance reality.</p>
                     <SiteLink href="/contact">
                         <Button size="lg" className="bg-white text-zinc-950 hover:bg-zinc-200 rounded-full px-8 h-14 text-lg font-bold shadow-xl shadow-white/5">
                             Start a Project <Terminal className="ml-2 w-5 h-5" />

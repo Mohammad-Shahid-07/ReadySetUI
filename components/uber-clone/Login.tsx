@@ -39,7 +39,7 @@ export default function Login() {
                 </form>
 
                 <p className="text-center text-gray-500 text-sm">
-                    Don't have an account? <SiteLink href="/signup" className="text-black font-bold underline">Sign up</SiteLink>
+                    Don&apos;t have an account? <SiteLink href="/signup" className="text-black font-bold underline">Sign up</SiteLink>
                 </p>
             </div>
         </div>

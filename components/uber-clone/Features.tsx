@@ -34,7 +34,7 @@ export default function Features() {
                         Why ride with us?
                     </h2>
                     <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-                        We're committed to providing the best ride-sharing experience possible.
+                        We&apos;re committed to providing the best ride-sharing experience possible.
                     </p>
                 </div>
 

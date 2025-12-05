@@ -21,12 +21,7 @@ export function SlantedSection({
         yellow: "bg-yellow-500 text-black",
     };
 
-    const clipPath =
-        angle === "right"
-            ? "polygon(0 0, 100% 5%, 100% 100%, 0 95%)"
-            : angle === "left"
-                ? "polygon(0 5%, 100% 0, 100% 95%, 0 100%)"
-                : "none";
+
 
     // We use negative margins and padding to create the overlap effect without gaps
     // But for simplicity in this project, we'll just use a skew transform or simple padding

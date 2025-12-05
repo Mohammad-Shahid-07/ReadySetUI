@@ -5,8 +5,8 @@ import dynamic from "next/dynamic";
 // Each site can have multiple pages (home, about, etc.)
 // The 'home' key is required, others are optional
 export type SiteComponentRegistry = {
-    home: ComponentType<any>;
-    [key: string]: ComponentType<any>;
+    home: ComponentType<unknown>;
+    [key: string]: ComponentType<unknown>;
 };
 
 // Centralized registry of all sites
@@ -89,7 +89,7 @@ export const siteRegistry: Record<string, SiteComponentRegistry> = {
 };
 
 // Helper function to get a component for a specific site and page
-export function getSiteComponent(site: string, page: string = "home"): ComponentType<any> | null {
+export function getSiteComponent(site: string, page: string = "home"): ComponentType<unknown> | null {
     const siteConfig = siteRegistry[site];
     if (!siteConfig) return null;
 

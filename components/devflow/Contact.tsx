@@ -14,10 +14,10 @@ export default function ContactPage() {
                     <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
                         <div>
                             <h1 className="text-4xl lg:text-5xl font-extrabold tracking-tight mb-6 text-white">
-                                Let's Build Something <span className="text-indigo-400">Extraordinary</span>
+                                Let&apos;s Build Something <span className="text-indigo-400">Extraordinary</span>
                             </h1>
                             <p className="text-xl text-zinc-400 mb-12 leading-relaxed">
-                                Whether you have a groundbreaking startup idea or need to scale your existing platform, I'm here to help.
+                                Whether you have a groundbreaking startup idea or need to scale your existing platform, I&apos;m here to help.
                             </p>
 
                             <div className="space-y-8 mb-12">

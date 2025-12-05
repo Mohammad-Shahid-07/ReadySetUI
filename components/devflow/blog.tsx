@@ -2,8 +2,8 @@
 import React from 'react';
 import Layout from './layout';
 import { Button } from '@/components/ui/button';
-import { SiteLink } from '@/components/site-link';
-import { Calendar, Clock, ArrowRight, Tag } from 'lucide-react';
+import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 export default function BlogPage() {
     return (
@@ -24,10 +24,11 @@ export default function BlogPage() {
                         <div className="lg:col-span-2 group cursor-pointer">
                             <div className="relative h-[400px] lg:h-[500px] rounded-3xl overflow-hidden mb-6 border border-white/5">
                                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent z-10"></div>
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
                                     alt="Coding setup"
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
                                 <div className="absolute bottom-0 left-0 p-8 lg:p-12 z-20 max-w-2xl">
                                     <div className="flex items-center gap-4 mb-4 text-sm font-bold uppercase tracking-wider text-indigo-400">
@@ -41,7 +42,7 @@ export default function BlogPage() {
                                         Understanding how RSCs are changing the way we build web applications, from performance benefits to architectural shifts.
                                     </p>
                                     <div className="flex items-center gap-3">
-                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" alt="Author" className="w-10 h-10 rounded-full border-2 border-zinc-950" />
+                                        <Image src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" alt="Author" width={40} height={40} className="rounded-full border-2 border-zinc-950" />
                                         <div>
                                             <p className="text-white font-bold text-sm">Alex Dev</p>
                                             <p className="text-zinc-500 text-xs">Oct 24, 2023</p>
@@ -104,10 +105,11 @@ export default function BlogPage() {
                             {[1, 2, 3, 4, 5, 6].map((i) => (
                                 <div key={i} className="group cursor-pointer">
                                     <div className="aspect-video rounded-2xl overflow-hidden mb-4 border border-white/5">
-                                        <img
+                                        <Image
                                             src={`https://images.unsplash.com/photo-${1550000000000 + i * 100000}?q=80&w=800&auto=format&fit=crop`}
                                             alt="Blog post"
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
                                         />
                                     </div>
                                     <div className="flex items-center gap-3 text-xs text-zinc-500 mb-3">

@@ -74,7 +74,7 @@ const yearlyPlans = [
     },
 ];
 
-function PricingCard({ plan }: { plan: any }) {
+function PricingCard({ plan }: { plan: typeof monthlyPlans[0] }) {
     return (
         <div
             className={cn(

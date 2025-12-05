@@ -1,5 +1,6 @@
 "use client"
 import React from 'react';
+import Image from 'next/image';
 import Layout from './layout';
 import { Button } from '@/components/ui/button';
 import { Instagram, Camera } from 'lucide-react';
@@ -35,7 +36,7 @@ export default function GalleryPage() {
                             "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=1000&auto=format&fit=crop"
                         ].map((src, i) => (
                             <div key={i} className="relative group rounded-2xl overflow-hidden break-inside-avoid">
-                                <img src={src} alt="Puppy" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
+                                <Image src={src} alt="Puppy" width={1000} height={1000} className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" />
                                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                     <div className="text-white text-center p-4">
                                         <p className="font-bold text-lg mb-1">@puppy_love_{i}</p>

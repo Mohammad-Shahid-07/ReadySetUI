@@ -1,9 +1,9 @@
 "use client"
 import React from 'react';
 import Layout from './layout';
-import { SiteLink } from '@/components/site-link';
 import { Button } from '@/components/ui/button';
-import { Calendar, User, ArrowRight } from 'lucide-react';
+import { Calendar, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 export default function BlogPage() {
     return (
@@ -19,9 +19,11 @@ export default function BlogPage() {
                     <div className="mb-16">
                         <div className="relative rounded-3xl overflow-hidden shadow-xl group cursor-pointer">
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=2069&auto=format&fit=crop"
                                 alt="Puppy running"
+                                width={2069}
+                                height={500}
                                 className="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
                             />
                             <div className="absolute bottom-0 left-0 p-8 lg:p-12 z-20 text-white max-w-3xl">
@@ -31,13 +33,13 @@ export default function BlogPage() {
                                     <span>5 min read</span>
                                 </div>
                                 <h2 className="text-3xl lg:text-5xl font-bold mb-6 leading-tight group-hover:text-indigo-200 transition-colors">
-                                    Why "All Life Stages" Food Might Be Harming Your Large Breed Puppy
+                                    Why &quot;All Life Stages&quot; Food Might Be Harming Your Large Breed Puppy
                                 </h2>
                                 <p className="text-lg text-slate-200 mb-8 line-clamp-2">
                                     Large breed puppies have very specific calcium and phosphorus requirements. Generic puppy food can lead to rapid growth and skeletal issues later in life.
                                 </p>
                                 <div className="flex items-center gap-4">
-                                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=100&auto=format&fit=crop" alt="Author" className="w-10 h-10 rounded-full border-2 border-white" />
+                                    <Image src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=100&auto=format&fit=crop" alt="Author" width={40} height={40} className="w-10 h-10 rounded-full border-2 border-white" />
                                     <div>
                                         <p className="font-bold">Dr. Sarah Chen</p>
                                         <p className="text-xs text-slate-300">Chief Veterinary Officer</p>
@@ -89,7 +91,7 @@ export default function BlogPage() {
                         ].map((post, i) => (
                             <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-lg transition-all group cursor-pointer flex flex-col">
                                 <div className="h-48 overflow-hidden relative">
-                                    <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                    <Image src={post.img} alt={post.title} width={1000} height={1000} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                                     <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-indigo-600">
                                         {post.cat}
                                     </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+
 
 const integrations = [
     "Ethereum", "Solana", "Polygon", "Arbitrum", "Optimism", "Binance Smart Chain", "Avalanche", "Base", "ZkSync", "Starknet"

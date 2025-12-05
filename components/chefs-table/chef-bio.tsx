@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function ChefBio() {
     return (
@@ -18,10 +19,11 @@ export default function ChefBio() {
                     >
                         <div className="relative aspect-[3/4] max-w-md mx-auto lg:mx-0">
                             <div className="absolute inset-0 border-2 border-[#D4AF37] translate-x-4 translate-y-4" />
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?q=80&w=2080&auto=format&fit=crop"
                                 alt="Chef Alexander Thorne"
-                                className="relative w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                fill
+                                className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                             />
                         </div>
                     </motion.div>
@@ -42,13 +44,13 @@ export default function ChefBio() {
 
                         <div className="space-y-6 text-gray-300 font-light leading-relaxed text-lg">
                             <p>
-                                "Cooking is not just about ingredients; it's about memory, emotion, and the relentless pursuit of perfection."
+                                "Cooking is not just about ingredients; it&apos;s about memory, emotion, and the relentless pursuit of perfection."
                             </p>
                             <p>
-                                With over two decades of experience in Michelin-starred kitchens across Paris, Tokyo, and New York, Chef Thorne brings a unique philosophy to Chef's Table. His approach marries classical French technique with the bold, umami-rich flavors of modern Asian cuisine.
+                                With over two decades of experience in Michelin-starred kitchens across Paris, Tokyo, and New York, Chef Thorne brings a unique philosophy to Chef&apos;s Table. His approach marries classical French technique with the bold, umami-rich flavors of modern Asian cuisine.
                             </p>
                             <p>
-                                At Chef's Table, he curates an intimate dining experience where the boundaries between the kitchen and the dining room dissolve, inviting guests to witness the artistry behind every plate.
+                                At Chef&apos;s Table, he curates an intimate dining experience where the boundaries between the kitchen and the dining room dissolve, inviting guests to witness the artistry behind every plate.
                             </p>
                         </div>
 

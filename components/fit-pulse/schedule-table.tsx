@@ -49,8 +49,8 @@ export function ScheduleTable() {
                         key={day}
                         onClick={() => setActiveDay(day)}
                         className={`px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all ${activeDay === day
-                                ? "bg-yellow-500 text-black skew-x-[-10deg]"
-                                : "bg-zinc-900 text-gray-400 hover:text-white hover:bg-zinc-800 skew-x-[-10deg]"
+                            ? "bg-yellow-500 text-black skew-x-[-10deg]"
+                            : "bg-zinc-900 text-gray-400 hover:text-white hover:bg-zinc-800 skew-x-[-10deg]"
                             }`}
                     >
                         <span className="block skew-x-[10deg]">{day}</span>
@@ -69,8 +69,7 @@ export function ScheduleTable() {
                         transition={{ duration: 0.2 }}
                         className="space-y-4"
                     >
-                        {/* @ts-ignore */}
-                        {schedule[activeDay]?.map((session, index) => (
+                        {schedule[activeDay as keyof typeof schedule]?.map((session, index) => (
                             <div
                                 key={index}
                                 className="flex flex-col md:flex-row items-center justify-between p-4 bg-black border border-white/5 hover:border-yellow-500/50 transition-colors group"

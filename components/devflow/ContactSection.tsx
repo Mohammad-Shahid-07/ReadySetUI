@@ -17,10 +17,10 @@ export default function Contact() {
                         transition={{ duration: 0.5 }}
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                            Let's work together
+                            Let&apos;s work together
                         </h2>
                         <p className="text-zinc-400 text-lg leading-relaxed mb-12">
-                            Have a project in mind? I'm always interested in hearing about new opportunities and interesting projects.
+                            Have a project in mind? I&apos;m always interested in hearing about new opportunities and interesting projects.
                         </p>
 
                         <div className="space-y-6">

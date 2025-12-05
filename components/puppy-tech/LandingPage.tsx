@@ -12,6 +12,7 @@ import {
     Clock,
     X
 } from 'lucide-react';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -45,7 +46,7 @@ export default function LandingPage() {
                     </h1>
 
                     <p className="text-xl text-slate-600 mb-12 leading-relaxed max-w-2xl mx-auto">
-                        Forget generic kibble. We use biometric data to engineer a daily meal plan perfectly balanced for your puppy's unique DNA, age, and lifestyle.
+                        Forget generic kibble. We use biometric data to engineer a daily meal plan perfectly balanced for your puppy&apos;s unique DNA, age, and lifestyle.
                     </p>
 
                     <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
@@ -66,7 +67,7 @@ export default function LandingPage() {
                         <div className="flex -space-x-3">
                             {[1, 2, 3, 4, 5].map((i) => (
                                 <div key={i} className="h-12 w-12 rounded-full border-4 border-slate-50 overflow-hidden bg-slate-200">
-                                    <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i + 10}`} alt="User" className="w-full h-full object-cover" />
+                                    <Image src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i + 10}`} alt="User" width={48} height={48} className="w-full h-full object-cover" />
                                 </div>
                             ))}
                         </div>
@@ -130,7 +131,7 @@ export default function LandingPage() {
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4">Real-time Adjustments</h3>
                                 <p className="text-slate-400">
-                                    Log your puppy's activity and weight in our app. We adjust the next delivery's calorie count automatically.
+                                    Log your puppy&apos;s activity and weight in our app. We adjust the next delivery&apos;s calorie count automatically.
                                 </p>
                             </div>
                             <div className="relative z-10 mt-8">
@@ -163,7 +164,7 @@ export default function LandingPage() {
                             <div className="relative z-10 max-w-md">
                                 <h3 className="text-2xl font-bold mb-2">Human Grade Ingredients</h3>
                                 <p className="text-slate-600">
-                                    If you wouldn't eat it, why should they? We use USDA-certified meats and fresh vegetables.
+                                    If you wouldn&apos;t eat it, why should they? We use USDA-certified meats and fresh vegetables.
                                 </p>
                             </div>
                             <div className="relative z-10 hidden sm:block">

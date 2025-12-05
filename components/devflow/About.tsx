@@ -3,7 +3,8 @@ import React from 'react';
 import Layout from './layout';
 import { Button } from '@/components/ui/button';
 import { SiteLink } from '@/components/site-link';
-import { Code2, Coffee, Globe, Terminal, Cpu, Zap } from 'lucide-react';
+import { Coffee, Globe, Terminal } from 'lucide-react';
+import Image from 'next/image';
 
 export default function AboutPage() {
     return (
@@ -16,7 +17,7 @@ export default function AboutPage() {
                         More Than Just <span className="text-indigo-400">Code</span>
                     </h1>
                     <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-10">
-                        I'm a full-stack developer obsessed with performance, design systems, and building digital products that feel alive.
+                        I&apos;m a full-stack developer obsessed with performance, design systems, and building digital products that feel alive.
                     </p>
                 </div>
             </section>
@@ -27,10 +28,11 @@ export default function AboutPage() {
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         <div className="relative">
                             <div className="aspect-square rounded-3xl overflow-hidden border border-white/10 relative z-10">
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop"
                                     alt="Developer Portrait"
-                                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                    fill
+                                    className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                                 />
                             </div>
                             <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl -z-10"></div>
@@ -43,10 +45,10 @@ export default function AboutPage() {
                                     It started with a MySpace profile in 2008. I wanted to change the background color, and stumbled into the rabbit hole of HTML and CSS.
                                 </p>
                                 <p>
-                                    Fast forward to today, and I've had the privilege of building software for <span className="text-white font-bold">startups, agencies, and Fortune 500 companies</span>. My philosophy is simple: code should be clean, interfaces should be intuitive, and performance is non-negotiable.
+                                    Fast forward to today, and I&apos;ve had the privilege of building software for <span className="text-white font-bold">startups, agencies, and Fortune 500 companies</span>. My philosophy is simple: code should be clean, interfaces should be intuitive, and performance is non-negotiable.
                                 </p>
                                 <p>
-                                    When I'm not debugging, you can find me brewing third-wave coffee, exploring cyberpunk aesthetics, or contributing to open source.
+                                    When I&apos;m not debugging, you can find me brewing third-wave coffee, exploring cyberpunk aesthetics, or contributing to open source.
                                 </p>
                             </div>
                             <div className="mt-10 flex gap-4">

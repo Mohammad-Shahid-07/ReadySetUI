@@ -3,7 +3,8 @@ import React from 'react';
 import Layout from './layout';
 import { SiteLink } from '@/components/site-link';
 import { Button } from '@/components/ui/button';
-import { Heart, ShieldCheck, Users, Award, Microscope, Leaf } from 'lucide-react';
+import Image from 'next/image';
+import { Heart, Award, Microscope, Leaf } from 'lucide-react';
 
 export default function AboutPage() {
     return (
@@ -33,7 +34,7 @@ export default function AboutPage() {
                                 <Heart className="w-4 h-4" /> Our Mission
                             </div>
                             <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-slate-900">
-                                Ending the "One Size Fits All" Era of Dog Food
+                                Ending the &quot;One Size Fits All&quot; Era of Dog Food
                             </h2>
                             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                                 For decades, the pet food industry has relied on mass-produced kibble that treats a Great Dane the same as a Chihuahua. We knew there had to be a better way.
@@ -54,9 +55,11 @@ export default function AboutPage() {
                         </div>
                         <div className="relative">
                             <div className="aspect-square rounded-[2.5rem] overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=1000&auto=format&fit=crop"
                                     alt="Happy dog with owner"
+                                    width={1000}
+                                    height={1000}
                                     className="w-full h-full object-cover"
                                 />
                             </div>
@@ -119,7 +122,7 @@ export default function AboutPage() {
                         ].map((member, i) => (
                             <div key={i} className="group text-center">
                                 <div className="relative mb-6 mx-auto w-48 h-48 rounded-full overflow-hidden border-4 border-slate-50 shadow-lg">
-                                    <img src={member.img} alt={member.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                    <Image src={member.img} alt={member.name} width={400} height={400} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                                 </div>
                                 <h3 className="text-lg font-bold text-slate-900">{member.name}</h3>
                                 <p className="text-indigo-600 font-medium text-sm">{member.role}</p>
@@ -132,7 +135,7 @@ export default function AboutPage() {
             {/* CTA */}
             <section className="py-24 bg-indigo-600 text-white text-center">
                 <div className="max-w-3xl mx-auto px-4">
-                    <h2 className="text-3xl lg:text-4xl font-bold mb-6">Ready to upgrade your pup's life?</h2>
+                    <h2 className="text-3xl lg:text-4xl font-bold mb-6">Ready to upgrade your pup&apos;s life?</h2>
                     <p className="text-indigo-100 text-lg mb-10">Join thousands of happy dogs and healthier lives today.</p>
                     <SiteLink href="/signup">
                         <Button size="lg" className="bg-white text-indigo-600 hover:bg-indigo-50 rounded-full px-8 h-14 text-lg font-bold shadow-xl">

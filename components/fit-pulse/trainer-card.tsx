@@ -1,6 +1,7 @@
 "use client";
 
 import { Instagram, Twitter, Linkedin } from "lucide-react";
+import Image from "next/image";
 
 interface TrainerCardProps {
     name: string;
@@ -13,10 +14,11 @@ export function TrainerCard({ name, role, image, bio }: TrainerCardProps) {
     return (
         <div className="group relative">
             <div className="relative aspect-[3/4] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
-                <img
+                <Image
                     src={image}
                     alt={name}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
 
@@ -40,7 +42,7 @@ export function TrainerCard({ name, role, image, bio }: TrainerCardProps) {
     );
 }
 
-function SocialLink({ icon: Icon }: { icon: any }) {
+function SocialLink({ icon: Icon }: { icon: React.ElementType }) {
     return (
         <a href="#" className="text-white hover:text-yellow-500 transition-colors">
             <Icon className="w-5 h-5" />

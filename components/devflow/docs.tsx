@@ -1,9 +1,7 @@
 "use client"
 import React from 'react';
 import Layout from './layout';
-import { Button } from '@/components/ui/button';
-import { SiteLink } from '@/components/site-link';
-import { Search, Book, FileText, Code, Settings, Terminal, ChevronRight, ArrowRight } from 'lucide-react';
+import { Search, Book, Settings, Terminal, ChevronRight, ArrowRight } from 'lucide-react';
 
 export default function DocsPage() {
     return (

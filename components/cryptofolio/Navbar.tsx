@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { Menu, Wallet } from "lucide-react";
 import { SiteLink } from "@/components/site-link";
 import { cn } from "@/lib/utils";

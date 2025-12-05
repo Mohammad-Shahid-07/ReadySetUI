@@ -2,6 +2,7 @@
 
 import { SiteLink } from "@/components/site-link";
 import { ArrowRight, Clock, Flame } from "lucide-react";
+import Image from "next/image";
 
 interface ClassCardProps {
     title: string;
@@ -12,15 +13,16 @@ interface ClassCardProps {
     calories: string;
 }
 
-export function ClassCard({ title, description, image, duration, intensity, calories }: ClassCardProps) {
+export function ClassCard({ title, description, image, duration, calories }: ClassCardProps) {
     return (
         <div className="group relative overflow-hidden bg-zinc-900 border border-white/10 hover:border-yellow-500 transition-colors">
             {/* Image */}
             <div className="aspect-[4/3] overflow-hidden">
-                <img
+                <Image
                     src={image}
                     alt={title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
             </div>
 

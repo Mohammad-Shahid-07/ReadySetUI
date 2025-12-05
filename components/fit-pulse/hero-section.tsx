@@ -3,6 +3,7 @@
 import { SiteLink } from "@/components/site-link";
 import { motion } from "framer-motion";
 import { ArrowRight, Zap } from "lucide-react";
+import Image from "next/image";
 
 export function HeroSection() {
     return (
@@ -11,10 +12,11 @@ export function HeroSection() {
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50 z-10" />
-                <img
+                <Image
                     src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop"
                     alt="High Intensity Workout"
-                    className="w-full h-full object-cover object-center opacity-60"
+                    fill
+                    className="object-cover object-center opacity-60"
                 />
             </div>
 

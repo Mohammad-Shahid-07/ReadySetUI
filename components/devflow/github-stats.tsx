@@ -5,7 +5,11 @@ export function GithubStats() {
     // Generate random contribution data for visual effect
     const weeks = 52;
     const days = 7;
-    const contributions = Array.from({ length: weeks * days }, () => Math.floor(Math.random() * 5));
+    const [contributions, setContributions] = React.useState<number[]>([]);
+
+    React.useEffect(() => {
+        setContributions(Array.from({ length: weeks * days }, () => Math.floor(Math.random() * 5)));
+    }, []);
 
     const getColor = (level: number) => {
         switch (level) {

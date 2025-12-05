@@ -3,7 +3,8 @@ import React from 'react';
 import Layout from './layout';
 import { Button } from '@/components/ui/button';
 import { SiteLink } from '@/components/site-link';
-import { ArrowRight, ExternalLink, Github, Layers, Cpu, Globe } from 'lucide-react';
+import { ArrowRight, Github } from 'lucide-react';
+import Image from 'next/image';
 
 export default function CaseStudiesPage() {
     return (
@@ -102,9 +103,11 @@ export default function CaseStudiesPage() {
                                     <div className={`order-1 ${i % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
                                         <div className="relative rounded-3xl overflow-hidden border border-white/5 shadow-2xl shadow-indigo-500/10 group-hover:shadow-indigo-500/20 transition-all duration-500">
                                             <div className="absolute inset-0 bg-indigo-500/10 mix-blend-overlay z-10 group-hover:opacity-0 transition-opacity"></div>
-                                            <img
+                                            <Image
                                                 src={study.image}
                                                 alt={study.title}
+                                                width={800}
+                                                height={600}
                                                 className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
                                             />
                                         </div>
@@ -118,7 +121,7 @@ export default function CaseStudiesPage() {
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-indigo-500 to-transparent"></div>
                         <h2 className="text-3xl font-bold text-white mb-6">Have a project in mind?</h2>
                         <p className="text-zinc-400 max-w-xl mx-auto mb-10">
-                            I'm currently available for new opportunities. Let's discuss how I can help your team ship better software, faster.
+                            I&apos;m currently available for new opportunities. Let&apos;s discuss how I can help your team ship better software, faster.
                         </p>
                         <SiteLink href="/contact">
                             <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full px-8 h-14 text-lg font-bold shadow-lg shadow-indigo-600/20">

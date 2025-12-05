@@ -6,6 +6,7 @@ import {
   Search,
   Github,
   ArrowUpRight,
+  Download,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { sites, allTags } from "@/lib/site-data";
@@ -180,12 +181,21 @@ export default function Home() {
                     {site.description}
                   </p>
 
-                  <div className="mt-auto flex items-center gap-2">
-                    {site.tags.slice(0, 3).map(tag => (
-                      <span key={tag} className="text-[10px] text-zinc-500 border border-white/5 px-2 py-1 rounded-full bg-white/5">
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="mt-auto flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      {site.tags.slice(0, 3).map(tag => (
+                        <span key={tag} className="text-[10px] text-zinc-500 border border-white/5 px-2 py-1 rounded-full bg-white/5">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <a
+                      href={`/api/download-site?site=${site.id}`}
+                      className="text-zinc-500 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10"
+                      title="Download Source Code"
+                    >
+                      <Download className="h-4 w-4" />
+                    </a>
                   </div>
                 </div>
               </div>

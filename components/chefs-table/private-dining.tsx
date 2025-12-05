@@ -5,6 +5,7 @@ import Layout from "./layout";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { SiteLink } from "@/components/site-link";
+import Image from "next/image";
 
 export default function PrivateDiningPage() {
     return (
@@ -31,10 +32,11 @@ export default function PrivateDiningPage() {
                             transition={{ duration: 0.8 }}
                             className="relative aspect-video overflow-hidden"
                         >
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop"
                                 alt="The Gold Room"
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                                fill
+                                className="object-cover hover:scale-105 transition-transform duration-700"
                             />
                         </motion.div>
                         <motion.div
@@ -89,10 +91,11 @@ export default function PrivateDiningPage() {
                             transition={{ duration: 0.8 }}
                             className="relative aspect-video overflow-hidden order-1 lg:order-2"
                         >
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070&auto=format&fit=crop"
                                 alt="The Cellar"
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                                fill
+                                className="object-cover hover:scale-105 transition-transform duration-700"
                             />
                         </motion.div>
                     </div>

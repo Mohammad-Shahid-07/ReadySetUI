@@ -1,5 +1,6 @@
 "use client"
 import React from 'react';
+import Image from 'next/image';
 import Layout from './layout';
 import { SiteLink } from '@/components/site-link';
 import { Button } from '@/components/ui/button';
@@ -15,7 +16,7 @@ export default function ServicesPage() {
                         More Than Just <span className="text-indigo-600">Food</span>
                     </h1>
                     <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10">
-                        We provide a complete ecosystem for your dog's health. From precision nutrition to expert veterinary advice.
+                        We provide a complete ecosystem for your dog&apos;s health. From precision nutrition to expert veterinary advice.
                     </p>
                 </div>
             </section>
@@ -30,7 +31,7 @@ export default function ServicesPage() {
                             </div>
                             <h2 className="text-3xl font-bold mb-4">Precision Meal Plans</h2>
                             <p className="text-lg text-slate-600 mb-6">
-                                Our core service. We deliver fresh, human-grade meals perfectly portioned for your dog's unique metabolic needs.
+                                Our core service. We deliver fresh, human-grade meals perfectly portioned for your dog&apos;s unique metabolic needs.
                             </p>
                             <ul className="space-y-3 mb-8">
                                 {[
@@ -51,9 +52,11 @@ export default function ServicesPage() {
                             </SiteLink>
                         </div>
                         <div className="order-1 lg:order-2 relative">
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1589924691195-41432c84c161?q=80&w=1000&auto=format&fit=crop"
                                 alt="Fresh dog food"
+                                width={1000}
+                                height={1000}
                                 className="rounded-3xl shadow-2xl"
                             />
                             <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100">
@@ -72,9 +75,11 @@ export default function ServicesPage() {
 
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         <div className="relative">
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1628009368231-760335298025?q=80&w=1000&auto=format&fit=crop"
                                 alt="Vet consultation"
+                                width={1000}
+                                height={1000}
                                 className="rounded-3xl shadow-2xl"
                             />
                         </div>

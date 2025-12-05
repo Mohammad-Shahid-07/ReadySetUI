@@ -38,7 +38,7 @@ export default function Page() {
                         FAQ
                     </h1>
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                        Got questions? We've got answers.
+                        Got questions? We&apos;ve got answers.
                     </p>
                 </div>
             </div>

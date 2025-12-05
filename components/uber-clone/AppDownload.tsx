@@ -2,6 +2,7 @@
 
 import { SiteLink } from "@/components/site-link";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function AppDownload() {
     return (
@@ -10,7 +11,7 @@ export default function AppDownload() {
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-8">
                         <h2 className="text-3xl md:text-5xl font-bold text-black tracking-tight">
-                            There's more to love in the app.
+                            There&apos;s more to love in the app.
                         </h2>
                         <p className="text-xl text-gray-600">
                             Get the app to access exclusive features, track your rides in real-time, and manage your account on the go.
@@ -42,10 +43,11 @@ export default function AppDownload() {
                             {/* Screen Content */}
                             <div className="relative w-full h-full bg-gray-200">
                                 {/* Map Background */}
-                                <img
+                                <Image
                                     src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1748&auto=format&fit=crop"
                                     alt="Map"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                 />
 
                                 {/* Route Line (SVG) */}
@@ -74,7 +76,7 @@ export default function AppDownload() {
                                     </div>
                                     <div className="flex items-center gap-4">
                                         <div className="w-10 h-10 bg-gray-200 rounded-full overflow-hidden">
-                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" alt="Driver" className="w-full h-full object-cover" />
+                                            <Image src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" alt="Driver" width={100} height={100} className="w-full h-full object-cover" />
                                         </div>
                                         <div>
                                             <div className="font-bold text-sm">Michael</div>

@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import { ArrowUpRight, Github } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 interface ProjectCardProps {
     title: string;
@@ -16,10 +16,11 @@ export function ProjectCard({ title, desc, tags, image, link, github }: ProjectC
     return (
         <div className="group relative rounded-3xl bg-zinc-900 border border-white/5 overflow-hidden hover:border-indigo-500/30 transition-all duration-500">
             <div className="aspect-video overflow-hidden">
-                <img
+                <Image
                     src={image}
                     alt={title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
             </div>
             <div className="p-6 lg:p-8">

@@ -1,17 +1,18 @@
 "use client";
 
-import { ArrowRight, MapPin } from "lucide-react";
-import { SiteLink } from "@/components/site-link";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
     return (
         <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-black">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
-                <img
+                <Image
                     src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop"
                     alt="City at night"
-                    className="w-full h-full object-cover opacity-60"
+                    fill
+                    className="object-cover opacity-60"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
             </div>
